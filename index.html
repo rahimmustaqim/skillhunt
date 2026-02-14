@@ -1,34 +1,953 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skillhunt - Engineering Solutions & Numerical Modeling Training</title>
+    <title>Skillhunt - Water Engineering Consulting & Numerical Modeling</title>
+
+    <!-- OCEAN/WATER THEME -->
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f0f0f0; }
-        header { background: #333; color: #fff; padding: 20px; text-align: center; }
-        .container { max-width: 1200px; margin: auto; padding: 20px; }
-        footer { text-align: center; padding: 20px; background: #333; color: white; position: relative; bottom: 0; width: 100%; }
+    :root {
+        /* Water Engineering Blue Theme */
+        --accent: #0066aa;
+        --accent-dark: #004d80;
+        --accent-light: #0088cc;
+        --muted: #5f7f8f;
+        --background: #f3f7fa;
+    }
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #1f2937;
+    line-height: 1.6;
+    background-color: #e8f2f7; /* soft ocean blue */
+}
+
+/* ===== Main Header ===== */
+.main-header {
+    background-color: #e8f2f7;
+    padding: 22px 24px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    border-bottom: none;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+    width: 100%;
+}
+
+.logo-box {
+    flex-shrink: 0;
+    width: 160px;
+    height: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, var(--accent), var(--accent-light));
+    border-radius: 12px;
+    color: white;
+    font-size: 42px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.header-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    flex: 1;
+}
+
+.site-title {
+    font-size: 34px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #000000;
+}
+
+.company-tagline {
+    margin-top: 8px;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--accent-dark);
+}
+
+.company-field {
+    margin-top: 4px;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    color: #333333;
+}
+
+.main-nav {
+    margin-top: 16px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.main-nav a {
+    font-size: 15px;
+    font-weight: 600;
+    color: #000;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 4px;
+}
+
+.main-nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.25s ease;
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+}
+
+.contact-btn {
+    margin-left: 16px;
+    padding: 8px 18px;
+    background: var(--accent);
+    color: #ffffff !important;
+    border-radius: 10px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-flex;
+    line-height: 1;
+    transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.contact-btn:hover {
+    background: var(--accent-dark);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 800px) {
+    .header-inner {
+        flex-direction: row;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .logo-box {
+        width: 110px;
+        height: 110px;
+        font-size: 32px;
+    }
+
+    .site-title {
+        font-size: 22px;
+        line-height: 1.25;
+    }
+
+    .company-tagline {
+        font-size: 16px;
+    }
+
+    .company-field {
+        font-size: 13px;
+        line-height: 1.4;
+    }
+
+    .main-nav {
+        gap: 12px;
+        margin-top: 10px;
+    }
+
+    .contact-btn {
+        margin-left: 0;
+        margin-top: 12px;
+    }
+}
+
+/* ===== Layout container ===== */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.hero {
+    background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+    padding: 48px 0;
+}
+
+.card {
+    background: rgba(255,255,255,0.95);
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: 
+        0 10px 28px rgba(0,0,0,0.12),
+        0 3px 8px rgba(0,0,0,0.06);
+}
+
+section {
+    scroll-margin-top: 80px;
+}
+
+h1 {
+    font-size: 32px;
+    line-height: 1.25;
+    margin: 0 0 16px 0;
+}
+
+h2 {
+    font-size: 26px;
+    color: var(--accent-dark);
+    margin: 0 0 20px 0;
+}
+
+h3 {
+    font-size: 22px;
+    color: var(--accent-dark);
+    margin: 0 0 16px 0;
+}
+
+h4 {
+    font-size: 18px;
+    color: var(--accent-dark);
+    margin: 0 0 12px 0;
+}
+
+.subtitle {
+    color: var(--muted);
+    font-size: 14px;
+    margin-top: 12px;
+}
+
+.cta {
+    display: inline-block;
+    margin-top: 12px;
+    background-color: var(--accent);
+    color: white;
+    padding: 12px 22px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.25s ease;
+}
+
+.cta:hover {
+    background-color: var(--accent-dark);
+    transform: translateY(-2px);
+}
+
+/* ===== Services Section ===== */
+.services {
+    max-width: 1100px;
+    margin: 48px auto;
+    padding: 0 24px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 28px;
+    margin-top: 28px;
+}
+
+.service-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow:
+        0 10px 26px rgba(0,0,0,0.12),
+        0 3px 8px rgba(0,0,0,0.06);
+    border-top: 5px solid var(--accent);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+    box-shadow:
+        0 18px 40px rgba(0,0,0,0.15),
+        0 6px 14px rgba(0,0,0,0.08);
+}
+
+.service-card h4 {
+    color: var(--accent-dark);
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.service-card p {
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: #374151;
+}
+
+.service-card ul {
+    padding-left: 18px;
+    margin: 12px 0;
+    font-size: 14px;
+    color: #374151;
+}
+
+.service-card ul li {
+    margin-bottom: 6px;
+}
+
+/* ===== Expertise Section ===== */
+.expertise {
+    max-width: 1100px;
+    margin: 48px auto;
+    padding: 0 24px;
+}
+
+.expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+    margin-top: 28px;
+}
+
+.expertise-item {
+    background: white;
+    padding: 24px;
+    border-radius: 14px;
+    border-left: 6px solid var(--accent);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease;
+}
+
+.expertise-item:hover {
+    transform: translateX(8px);
+}
+
+.expertise-item strong {
+    font-size: 18px;
+    color: var(--accent-dark);
+    display: block;
+    margin-bottom: 8px;
+}
+
+.expertise-item p {
+    font-size: 14px;
+    color: var(--muted);
+    margin: 0;
+}
+
+/* ===== Portfolio Section ===== */
+.portfolio {
+    max-width: 1100px;
+    margin: 48px auto;
+    padding: 0 24px;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 28px;
+    margin-top: 28px;
+}
+
+.portfolio-card {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow:
+        0 10px 26px rgba(0,0,0,0.12),
+        0 3px 8px rgba(0,0,0,0.06);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-6px);
+    box-shadow:
+        0 18px 40px rgba(0,0,0,0.15),
+        0 6px 14px rgba(0,0,0,0.08);
+}
+
+.portfolio-image {
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(135deg, #0066aa, #0088cc);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 48px;
+    font-weight: 800;
+}
+
+.portfolio-content {
+    padding: 24px;
+}
+
+.portfolio-content h4 {
+    color: var(--accent-dark);
+    margin-bottom: 10px;
+}
+
+.portfolio-content p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+/* ===== About Section ===== */
+.about {
+    max-width: 1100px;
+    margin: 48px auto;
+    padding: 0 24px;
+}
+
+.about .card {
+    border-left: 6px solid var(--accent);
+}
+
+.about p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #374151;
+    margin-bottom: 14px;
+}
+
+/* ===== Contact Section ===== */
+.contact {
+    max-width: 1100px;
+    margin: 48px auto 60px;
+    padding: 0 24px;
+}
+
+.contact-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 24px;
+}
+
+.contact-form label {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.contact-form input,
+.contact-form textarea {
+    margin-top: 6px;
+    padding: 12px 14px;
+    font-size: 14px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    font-family: inherit;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-form textarea {
+    grid-column: span 2;
+    resize: vertical;
+    min-height: 120px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px rgba(0,102,170,0.15);
+}
+
+.contact-submit {
+    grid-column: span 2;
+    margin-top: 10px;
+}
+
+@media (max-width: 700px) {
+    .contact-form {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form textarea,
+    .contact-submit {
+        grid-column: span 1;
+    }
+}
+
+.contact-info {
+    margin-top: 28px;
+    padding: 20px;
+    background: var(--background);
+    border-radius: 12px;
+    border-left: 4px solid var(--accent);
+}
+
+.contact-info p {
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+.contact-info strong {
+    color: var(--accent-dark);
+}
+
+/* ===== Footer ===== */
+footer {
+    margin-top: 60px;
+    padding: 32px 24px;
+    background: #d4e8f0;
+    text-align: center;
+    border-top: 3px solid var(--accent);
+}
+
+footer p {
+    margin: 8px 0;
+    color: #374151;
+}
+
+.footer-links {
+    margin-top: 16px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: var(--accent-dark);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: var(--accent);
+}
+
+/* ===== Background Effects ===== */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle at 10% 10%, rgba(255,255,255,0.35), transparent 40%),
+        radial-gradient(circle at 90% 20%, rgba(255,255,255,0.25), transparent 45%);
+    pointer-events: none;
+    z-index: -1;
+}
     </style>
 </head>
+
 <body>
-    <header>
-        <h1>Welcome to Skillhunt</h1>
-        <p>Your partner in engineering solutions and numerical modeling training</p>
-    </header>
-    <div class="container">
-        <section>
-            <h2>Our Services</h2>
-            <p>At Skillhunt, we offer specialized training services focused on computational fluid dynamics (CFD) and engineering solutions tailored to meet your needs.</p>
-            <ul>
-                <li>CFD-Inspired Design</li>
-                <li>Numerical Modeling Training</li>
-                <li>Customized Engineering Solutions</li>
-            </ul>
-        </section>
+
+<header class="main-header">
+    <div class="header-inner">
+        <div class="logo-box">
+            SH
+        </div>
+
+        <div class="header-text">
+            <div class="site-title">SKILLHUNT</div>
+            <div class="company-tagline">Water Engineering Consulting</div>
+            <div class="company-field">
+                Expert solutions for complex water systems through advanced numerical modeling
+            </div>
+
+            <nav class="main-nav">
+                <a href="#home">Home</a>
+                <a href="#services">Services</a>
+                <a href="#expertise">Expertise</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#about">About</a>
+                <a href="#contact" class="contact-btn">Contact Us</a>
+            </nav>
+        </div>
     </div>
-    <footer>
-        <p>&copy; 2026 Skillhunt. All rights reserved.</p>
-    </footer>
+</header>
+
+<section id="home" class="hero">
+    <div class="container">
+        <div class="card">
+            <h1>Engineering Solutions for Complex Water Systems</h1>
+            <p class="subtitle">
+                ✔ Advanced Numerical Modeling &nbsp;•&nbsp; Research-Based Approach &nbsp;•&nbsp; Practical Engineering Solutions
+            </p>
+            <p>
+                Skillhunt delivers comprehensive engineering consulting services for water-related challenges 
+                across river basins, flood-prone areas, and coastal zones. We combine cutting-edge numerical 
+                modeling techniques with practical engineering expertise to provide actionable solutions for 
+                the most complex hydraulic and hydrological problems.
+            </p>
+            <p>
+                Our team specializes in computational fluid dynamics (CFD), advanced hydrological modeling, 
+                and coastal engineering analysis. Whether you need flood risk assessment, river hydraulics 
+                analysis, coastal dynamics modeling, or professional training in industry-standard software, 
+                we deliver results backed by rigorous scientific methods and proven engineering judgment.
+            </p>
+            <a class="cta" href="#contact">Start Your Project</a>
+        </div>
+    </div>
+</section>
+
+<section id="services" class="services">
+    <div class="container">
+        <h2>Our Services</h2>
+        <p>
+            We provide specialized engineering consulting and training services for water systems analysis 
+            and management. Our solutions are tailored to meet the unique challenges of each project.
+        </p>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <h4>🌊 Engineering Solutions for Complex Water Systems</h4>
+                <p>
+                    Comprehensive analysis and design solutions for challenging water-related engineering projects.
+                </p>
+                <ul>
+                    <li><strong>River Basin Studies:</strong> Watershed analysis, flow modeling, and basin management planning</li>
+                    <li><strong>Flood Analysis & Mitigation:</strong> Flood risk assessment, inundation mapping, and mitigation design</li>
+                    <li><strong>Coastal Zone Engineering:</strong> Coastal dynamics, sediment transport, and shoreline protection</li>
+                    <li><strong>Hydraulic Structure Design:</strong> Dams, weirs, spillways, and channel structures</li>
+                    <li><strong>Water Resources Management:</strong> Supply analysis, demand forecasting, and optimization</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <h4>📊 Numerical Modeling & CFD Analysis</h4>
+                <p>
+                    Advanced computational modeling using industry-leading software for accurate predictions 
+                    and design optimization.
+                </p>
+                <ul>
+                    <li><strong>HEC-RAS:</strong> 1D/2D hydraulic modeling, floodplain analysis, and river simulations</li>
+                    <li><strong>HEC-HMS:</strong> Rainfall-runoff modeling, hydrograph generation, and watershed analysis</li>
+                    <li><strong>DELFT3D:</strong> Coastal hydrodynamics, wave modeling, and sediment transport</li>
+                    <li><strong>MODFLOW:</strong> Groundwater flow modeling and aquifer analysis</li>
+                    <li><strong>Custom CFD Solutions:</strong> Specialized computational fluid dynamics applications</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <h4>🎓 Professional Training & Capacity Building</h4>
+                <p>
+                    Comprehensive training programs designed to transfer knowledge and build technical capacity 
+                    in water engineering modeling.
+                </p>
+                <ul>
+                    <li><strong>Software Training:</strong> Hands-on workshops for HEC-RAS, HEC-HMS, DELFT3D, MODFLOW</li>
+                    <li><strong>Custom Workshops:</strong> Tailored training programs for your organization's needs</li>
+                    <li><strong>Academic Support:</strong> Research guidance and technical support for graduate students</li>
+                    <li><strong>Technical Mentoring:</strong> One-on-one coaching for complex modeling projects</li>
+                    <li><strong>Online Training:</strong> Flexible remote learning options with live support</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="expertise" class="expertise">
+    <div class="container">
+        <h2>Technical Expertise & Tools</h2>
+        <p>
+            Our team brings deep expertise in the most advanced engineering analysis tools and methodologies 
+            for water systems engineering.
+        </p>
+
+        <div class="expertise-grid">
+            <div class="expertise-item">
+                <strong>HEC-RAS</strong>
+                <p>Hydraulic modeling for rivers, channels, and floodplains with 1D and 2D capabilities</p>
+            </div>
+
+            <div class="expertise-item">
+                <strong>HEC-HMS</strong>
+                <p>Hydrological modeling for rainfall-runoff analysis and flood forecasting</p>
+            </div>
+
+            <div class="expertise-item">
+                <strong>DELFT3D</strong>
+                <p>Coastal and estuarine modeling for hydrodynamics and sediment transport</p>
+            </div>
+
+            <div class="expertise-item">
+                <strong>MODFLOW</strong>
+                <p>Groundwater flow simulation and aquifer management analysis</p>
+            </div>
+
+            <div class="expertise-item">
+                <strong>GIS Integration</strong>
+                <p>Spatial analysis and mapping using ArcGIS and QGIS platforms</p>
+            </div>
+
+            <div class="expertise-item">
+                <strong>Data Analysis</strong>
+                <p>Statistical analysis, time series processing, and data visualization</p>
+            </div>
+
+            <div class="expertise-item">
+                <strong>Climate Analysis</strong>
+                <p>Climate change impact assessment and future scenarios modeling</p>
+            </div>
+
+            <div class="expertise-item">
+                <strong>Risk Assessment</strong>
+                <p>Quantitative risk analysis and uncertainty quantification</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="portfolio" class="portfolio">
+    <div class="container">
+        <h2>Featured Projects</h2>
+        <p>
+            Explore our portfolio of successful water engineering projects across diverse applications 
+            and geographic regions.
+        </p>
+
+        <div class="portfolio-grid">
+            <div class="portfolio-card">
+                <div class="portfolio-image">🏞️</div>
+                <div class="portfolio-content">
+                    <h4>River Basin Integrated Study</h4>
+                    <p>
+                        Comprehensive watershed analysis and flood risk assessment for a major river basin. 
+                        Included hydrological modeling, hydraulic analysis, and development of flood 
+                        management strategies using HEC-HMS and HEC-RAS.
+                    </p>
+                </div>
+            </div>
+
+            <div class="portfolio-card">
+                <div class="portfolio-image">🌊</div>
+                <div class="portfolio-content">
+                    <h4>Coastal Dynamics & Protection</h4>
+                    <p>
+                        Advanced coastal modeling study to assess shoreline evolution and design protection 
+                        measures. Applied DELFT3D for wave-current interaction, sediment transport analysis, 
+                        and coastal structure optimization.
+                    </p>
+                </div>
+            </div>
+
+            <div class="portfolio-card">
+                <div class="portfolio-image">💧</div>
+                <div class="portfolio-content">
+                    <h4>Flood Inundation Mapping</h4>
+                    <p>
+                        High-resolution 2D flood modeling for urban and rural areas to support emergency 
+                        planning and land use decisions. Delivered detailed inundation maps and risk 
+                        assessment reports.
+                    </p>
+                </div>
+            </div>
+
+            <div class="portfolio-card">
+                <div class="portfolio-image">🎓</div>
+                <div class="portfolio-content">
+                    <h4>Professional Training Programs</h4>
+                    <p>
+                        Delivered comprehensive training workshops on HEC-RAS, HEC-HMS, and DELFT3D to 
+                        engineering professionals and researchers. Participants gained hands-on experience 
+                        with real-world case studies.
+                    </p>
+                </div>
+            </div>
+
+            <div class="portfolio-card">
+                <div class="portfolio-image">🏗️</div>
+                <div class="portfolio-content">
+                    <h4>Hydraulic Structure Design</h4>
+                    <p>
+                        Engineering design and analysis of hydraulic structures including spillways, 
+                        stilling basins, and channel transitions using CFD and physical modeling principles.
+                    </p>
+                </div>
+            </div>
+
+            <div class="portfolio-card">
+                <div class="portfolio-image">🌍</div>
+                <div class="portfolio-content">
+                    <h4>Climate Change Impact Assessment</h4>
+                    <p>
+                        Evaluated climate change impacts on water resources and flood risk for regional 
+                        planning. Integrated climate scenarios with hydrological models to project future 
+                        conditions.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="about">
+    <div class="container">
+        <h2>About Skillhunt</h2>
+        <div class="card">
+            <p>
+                <strong>Skillhunt</strong> is a specialized water engineering consulting firm dedicated to solving 
+                complex challenges in hydraulic and hydrological systems. Our mission is to deliver innovative, 
+                science-based engineering solutions that protect communities, optimize water resources, and support 
+                sustainable development.
+            </p>
+            <p>
+                Founded by experienced water engineering professionals, we bring together expertise in computational 
+                modeling, field investigation, and engineering design. Our team has successfully completed projects 
+                ranging from small-scale site assessments to large regional water management studies.
+            </p>
+            <p>
+                <strong>Our Approach:</strong> We believe in combining rigorous scientific analysis with practical 
+                engineering judgment. Every project begins with a thorough understanding of the physical processes, 
+                careful data collection and analysis, and application of appropriate modeling tools. We communicate 
+                technical findings clearly to support informed decision-making.
+            </p>
+            <p>
+                <strong>Our Commitment:</strong> We are committed to excellence in engineering practice, continuous 
+                learning, and knowledge transfer. Through our consulting and training services, we help build capacity 
+                within organizations and contribute to advancing the practice of water engineering.
+            </p>
+            <p>
+                Whether you need expert analysis for a critical infrastructure project, advanced modeling for research, 
+                or professional training for your team, Skillhunt has the expertise and dedication to support your success.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="contact">
+    <div class="container">
+        <h2>Get In Touch</h2>
+        <div class="card">
+            <p>
+                Ready to start your project or interested in our training programs? Contact us today to discuss 
+                your needs and learn how we can help.
+            </p>
+
+            <form class="contact-form" action="#" method="post">
+                <label>
+                    Name
+                    <input type="text" name="name" required>
+                </label>
+
+                <label>
+                    Email
+                    <input type="email" name="email" required>
+                </label>
+
+                <label>
+                    Organization
+                    <input type="text" name="organization">
+                </label>
+
+                <label>
+                    Phone
+                    <input type="tel" name="phone">
+                </label>
+
+                <label>
+                    Project Type
+                    <select name="project-type" style="margin-top: 6px; padding: 12px 14px; font-size: 14px; border-radius: 8px; border: 1px solid #d1d5db; font-family: inherit;">
+                        <option value="">-- Select --</option>
+                        <option value="engineering">Engineering Consulting</option>
+                        <option value="modeling">Numerical Modeling</option>
+                        <option value="training">Professional Training</option>
+                        <option value="research">Academic/Research Support</option>
+                        <option value="other">Other</option>
+                    </select>
+                </label>
+
+                <label>
+                    Budget Range
+                    <select name="budget" style="margin-top: 6px; padding: 12px 14px; font-size: 14px; border-radius: 8px; border: 1px solid #d1d5db; font-family: inherit;">
+                        <option value="">-- Select --</option>
+                        <option value="small">< $5,000</option>
+                        <option value="medium">$5,000 - $20,000</option>
+                        <option value="large">$20,000 - $50,000</option>
+                        <option value="xlarge">> $50,000</option>
+                    </select>
+                </label>
+
+                <label>
+                    Message
+                    <textarea name="message" required></textarea>
+                </label>
+
+                <div class="contact-submit">
+                    <button type="submit" class="cta" style="border: none; cursor: pointer;">Send Message</button>
+                </div>
+            </form>
+
+            <div class="contact-info">
+                <p><strong>Email:</strong> contact@skillhunt.com</p>
+                <p><strong>Phone:</strong> +1 (555) 123-4567</p>
+                <p><strong>Business Hours:</strong> Monday - Friday, 9:00 AM - 5:00 PM</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p><strong>© <span id="year"></span> Skillhunt Water Engineering Consulting</strong></p>
+    <p style="font-size:13px;color:var(--muted);margin-top:4px;">
+        Advancing water engineering through innovation, expertise, and commitment to excellence
+    </p>
+    
+    <div class="footer-links">
+        <a href="#services">Services</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </div>
+</footer>
+
+<script>
+// Set current year
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// Active navigation highlight on scroll
+const sections = document.querySelectorAll("section[id]");
+const navLinks = document.querySelectorAll(".main-nav a");
+
+window.addEventListener("scroll", () => {
+    let current = "";
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120;
+        if (window.scrollY >= sectionTop) {
+            current = section.getAttribute("id");
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === "#" + current) {
+            link.classList.add("active");
+        }
+    });
+});
+</script>
+
 </body>
 </html>
