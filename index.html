@@ -3,65 +3,1011 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PT Skillnova Digital</title>
+    <meta name="description" content="PT Skillnova Digital - Advanced Water Engineering Solutions & Digital Innovation">
+    <title>PT Skillnova Digital - Water Engineering & Digital Innovation</title>
     <style>
+        /* ========== CSS RESET & BASE STYLES ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
             color: #333;
+            background-color: #f5f5f5;
         }
+
+        /* ========== COLOR VARIABLES ========== */
+        :root {
+            --primary-blue: #0066AA;
+            --dark-blue: #004080;
+            --light-blue: #e8f2f7;
+            --accent-blue: #0088CC;
+            --text-dark: #333;
+            --text-light: #666;
+            --white: #ffffff;
+            --gradient-start: #0066AA;
+            --gradient-end: #004080;
+        }
+
+        /* ========== TYPOGRAPHY ========== */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 600;
+            color: var(--dark-blue);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        /* ========== HEADER & NAVIGATION ========== */
         header {
-            background-color: #0066AA;
-            color: #ffffff;
-            padding: 20px;
+            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+            color: var(--white);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-svg {
+            width: 60px;
+            height: 60px;
+        }
+
+        .company-info h1 {
+            font-size: 1.8rem;
+            color: var(--white);
+            margin: 0;
+        }
+
+        .company-info p {
+            font-size: 0.9rem;
+            color: var(--light-blue);
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        nav a:hover {
+            color: var(--light-blue);
+        }
+
+        /* ========== HERO SECTION ========== */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
+            color: var(--white);
+            padding: 5rem 2rem;
             text-align: center;
         }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: var(--light-blue);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--white);
+            color: var(--primary-blue);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            background-color: var(--light-blue);
+        }
+
+        /* ========== SECTIONS ========== */
         section {
-            padding: 20px;
-            margin: 10px;
-            background: white;
-            border-radius: 5px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
-        footer {
+
+        .section-alternate {
+            background-color: var(--white);
+        }
+
+        .section-title {
+            color: var(--dark-blue);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--accent-blue));
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
             text-align: center;
-            padding: 10px;
-            background-color: #0066AA;
-            color: white;
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ========== SERVICES SECTION ========== */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--primary-blue);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 30px rgba(0, 102, 170, 0.15);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-blue);
+        }
+
+        .service-card h3 {
+            color: var(--dark-blue);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .service-card ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .service-card ul li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-light);
+        }
+
+        .service-card ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary-blue);
+            font-weight: bold;
+        }
+
+        /* ========== EXPERTISE GRID ========== */
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .expertise-item {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .expertise-item:hover {
+            border-color: var(--primary-blue);
+            transform: translateY(-5px);
+            box-shadow: 0 5px 25px rgba(0, 102, 170, 0.15);
+        }
+
+        .expertise-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-blue);
+        }
+
+        .expertise-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            color: var(--dark-blue);
+        }
+
+        .expertise-item p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* ========== PORTFOLIO/PROJECTS SECTION ========== */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .project-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 30px rgba(0, 102, 170, 0.2);
+        }
+
+        .project-image {
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 4rem;
+        }
+
+        .project-content {
+            padding: 2rem;
+        }
+
+        .project-card h3 {
+            color: var(--dark-blue);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .project-card p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* ========== ABOUT SECTION ========== */
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .about-box {
+            background: var(--light-blue);
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary-blue);
+        }
+
+        .about-box h3 {
+            color: var(--dark-blue);
+            margin-bottom: 1rem;
+        }
+
+        .about-box p {
+            color: var(--text-dark);
+            line-height: 1.8;
+        }
+
+        /* ========== CONTACT SECTION ========== */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--dark-blue);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-button {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 100%);
+            color: var(--white);
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 102, 170, 0.3);
+        }
+
+        .submit-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 102, 170, 0.4);
+        }
+
+        .contact-info {
+            background: var(--light-blue);
+            padding: 2.5rem;
+            border-radius: 12px;
+        }
+
+        .contact-info h3 {
+            color: var(--dark-blue);
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: start;
+            gap: 1rem;
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            margin-top: 0.2rem;
+        }
+
+        .contact-item h4 {
+            color: var(--dark-blue);
+            margin-bottom: 0.3rem;
+            font-size: 1rem;
+        }
+
+        .contact-item p {
+            color: var(--text-dark);
+            margin: 0;
+        }
+
+        /* ========== FOOTER ========== */
+        footer {
+            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--primary-blue) 100%);
+            color: var(--white);
+            padding: 3rem 2rem 1.5rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: var(--white);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: var(--light-blue);
+            text-decoration: none;
+            line-height: 2;
+            display: block;
+        }
+
+        .footer-section a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--light-blue);
+        }
+
+        /* ========== RESPONSIVE DESIGN ========== */
+        @media (max-width: 800px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            nav ul {
+                justify-content: center;
+                gap: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid,
+            .expertise-grid,
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 700px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.7rem;
+            }
+
+            .hero {
+                padding: 3rem 1.5rem;
+            }
+
+            section {
+                padding: 3rem 1.5rem;
+            }
+
+            .company-info h1 {
+                font-size: 1.4rem;
+            }
+
+            .company-info p {
+                font-size: 0.8rem;
+            }
+
+            nav ul {
+                gap: 0.8rem;
+                font-size: 0.85rem;
+            }
+        }
+
+        /* ========== ANIMATIONS ========== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.6s ease-out;
         }
     </style>
 </head>
 <body>
+    <!-- ========== HEADER ========== -->
     <header>
-        <h1>PT Skillnova Digital</h1>
-        <img src="logo.svg" alt="Skillnova Logo" style="width: 150px; height: auto;" />
+        <div class="header-container">
+            <div class="logo-section">
+                <!-- Embedded SVG Logo -->
+                <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Outer Circle Frame -->
+                    <circle cx="50" cy="50" r="48" fill="none" stroke="#ffffff" stroke-width="2"/>
+                    
+                    <!-- Water Wave Curves -->
+                    <path d="M 20 35 Q 30 30, 40 35 T 60 35 T 80 35" 
+                          fill="none" stroke="#ffffff" stroke-width="2.5" opacity="0.9"/>
+                    <path d="M 20 45 Q 30 40, 40 45 T 60 45 T 80 45" 
+                          fill="none" stroke="#ffffff" stroke-width="2.5" opacity="0.8"/>
+                    <path d="M 20 55 Q 30 50, 40 55 T 60 55 T 80 55" 
+                          fill="none" stroke="#ffffff" stroke-width="2.5" opacity="0.7"/>
+                    
+                    <!-- Digital Circuit Nodes -->
+                    <circle cx="30" cy="65" r="3" fill="#ffffff"/>
+                    <circle cx="50" cy="70" r="4" fill="#ffffff"/>
+                    <circle cx="70" cy="65" r="3" fill="#ffffff"/>
+                    
+                    <!-- Circuit Connection Lines (Dashed) -->
+                    <line x1="30" y1="65" x2="50" y2="70" stroke="#ffffff" stroke-width="1.5" stroke-dasharray="2,2"/>
+                    <line x1="50" y1="70" x2="70" y2="65" stroke="#ffffff" stroke-width="1.5" stroke-dasharray="2,2"/>
+                    
+                    <!-- Central Innovation Core -->
+                    <circle cx="50" cy="50" r="8" fill="none" stroke="#ffffff" stroke-width="2"/>
+                    <circle cx="50" cy="50" r="4" fill="#ffffff"/>
+                </svg>
+                
+                <div class="company-info">
+                    <h1>PT Skillnova Digital</h1>
+                    <p>Advanced Water Engineering Solutions &amp; Digital Innovation</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#expertise">Expertise</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    <section id="about">
-        <h2>About Us</h2>
-        <p>We are a digital agency focused on delivering innovative solutions in water engineering.</p>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Leading Water Engineering Excellence</h1>
+            <p>Transforming complex water challenges into sustainable solutions through advanced numerical modeling, innovative technology, and decades of expertise</p>
+            <a href="#contact" class="cta-button">Start Your Project</a>
+        </div>
     </section>
-    <section id="services">
-        <h2>Our Services</h2>
-        <ul>
-            <li>Digital Branding</li>
-            <li>Web Development</li>
-            <li>Consultation in Water Engineering</li>
-        </ul>
+
+    <!-- ========== SERVICES SECTION ========== -->
+    <section id="services" class="section-alternate">
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-subtitle">Comprehensive water engineering solutions powered by cutting-edge technology and deep domain expertise</p>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🌊</div>
+                <h3>Engineering Solutions for Complex Water Systems</h3>
+                <p>Comprehensive analysis and management of water resources and hydraulic infrastructure</p>
+                <ul>
+                    <li>River basin analysis &amp; management</li>
+                    <li>Flood risk assessment &amp; mitigation</li>
+                    <li>Coastal engineering &amp; protection</li>
+                    <li>Hydraulic structure design</li>
+                    <li>Water resources planning</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">📊</div>
+                <h3>Numerical Modeling &amp; Simulation Training</h3>
+                <p>Professional certification programs in industry-standard modeling tools</p>
+                <ul>
+                    <li>HEC-RAS hydraulic modeling training</li>
+                    <li>MODFLOW groundwater simulation</li>
+                    <li>DELFT3D coastal dynamics modeling</li>
+                    <li>HEC-HMS hydrological modeling</li>
+                    <li>CFD analysis &amp; applications</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">💡</div>
+                <h3>Digital Innovation &amp; Data Analytics</h3>
+                <p>Advanced technology solutions for water resource management</p>
+                <ul>
+                    <li>GIS spatial analysis &amp; mapping</li>
+                    <li>Real-time monitoring systems</li>
+                    <li>Climate modeling &amp; projections</li>
+                    <li>Data-driven decision support</li>
+                    <li>Digital twin development</li>
+                </ul>
+            </div>
+        </div>
     </section>
+
+    <!-- ========== EXPERTISE SECTION ========== -->
     <section id="expertise">
-        <h2>Our Expertise</h2>
-        <p>We specialize in integrating technology with water management.</p>
+        <h2 class="section-title">Technical Expertise</h2>
+        <p class="section-subtitle">World-class capabilities in water engineering modeling and simulation</p>
+        
+        <div class="expertise-grid">
+            <div class="expertise-item">
+                <div class="expertise-icon">🌊</div>
+                <h3>HEC-RAS Hydraulic Modeling</h3>
+                <p>Advanced river hydraulics and flood modeling with 1D/2D simulations</p>
+            </div>
+
+            <div class="expertise-item">
+                <div class="expertise-icon">💧</div>
+                <h3>MODFLOW Groundwater Simulation</h3>
+                <p>Comprehensive aquifer modeling and groundwater resource assessment</p>
+            </div>
+
+            <div class="expertise-item">
+                <div class="expertise-icon">🌊</div>
+                <h3>DELFT3D Coastal Dynamics</h3>
+                <p>Wave modeling, sediment transport, and coastal morphology analysis</p>
+            </div>
+
+            <div class="expertise-item">
+                <div class="expertise-icon">☔</div>
+                <h3>HEC-HMS Hydrological Modeling</h3>
+                <p>Watershed modeling and rainfall-runoff simulation</p>
+            </div>
+
+            <div class="expertise-item">
+                <div class="expertise-icon">🔬</div>
+                <h3>CFD &amp; Advanced Simulations</h3>
+                <p>Computational fluid dynamics for complex flow scenarios</p>
+            </div>
+
+            <div class="expertise-item">
+                <div class="expertise-icon">🗺️</div>
+                <h3>GIS &amp; Spatial Analysis</h3>
+                <p>Geospatial data analysis and visualization for water resources</p>
+            </div>
+
+            <div class="expertise-item">
+                <div class="expertise-icon">📈</div>
+                <h3>Data-Driven Decision Making</h3>
+                <p>Analytics and insights from complex water data</p>
+            </div>
+
+            <div class="expertise-item">
+                <div class="expertise-icon">🌡️</div>
+                <h3>Climate &amp; Risk Assessment</h3>
+                <p>Climate change adaptation and water security planning</p>
+            </div>
+        </div>
     </section>
-    <section id="portfolio">
-        <h2>Our Portfolio</h2>
-        <p>Check out our latest projects.</p>
+
+    <!-- ========== PORTFOLIO SECTION ========== -->
+    <section id="portfolio" class="section-alternate">
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-subtitle">Delivering impactful solutions across diverse water engineering challenges</p>
+        
+        <div class="portfolio-grid">
+            <div class="project-card">
+                <div class="project-image">🏞️</div>
+                <div class="project-content">
+                    <h3>River Basin Studies</h3>
+                    <p>Comprehensive hydraulic analysis for major river systems including flood mapping, channel design, and sediment transport assessment</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">🌊</div>
+                <div class="project-content">
+                    <h3>Coastal Dynamics</h3>
+                    <p>Integrated coastal zone management with wave modeling, shoreline evolution prediction, and coastal protection design</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">🗺️</div>
+                <div class="project-content">
+                    <h3>Flood Risk Mapping</h3>
+                    <p>Advanced flood hazard assessment and mitigation planning using state-of-the-art 2D hydraulic modeling</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">🎓</div>
+                <div class="project-content">
+                    <h3>Training Programs</h3>
+                    <p>Numerical modeling certification programs for water engineering professionals with hands-on practical exercises</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">💧</div>
+                <div class="project-content">
+                    <h3>Groundwater Studies</h3>
+                    <p>MODFLOW-based aquifer characterization, sustainable yield assessment, and groundwater management planning</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">🌍</div>
+                <div class="project-content">
+                    <h3>Climate Resilience</h3>
+                    <p>Climate adaptation strategies and water security planning incorporating future climate scenarios</p>
+                </div>
+            </div>
+        </div>
     </section>
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Email: contact@skillnova.com</p>
+
+    <!-- ========== ABOUT SECTION ========== -->
+    <section id="about">
+        <h2 class="section-title">About PT Skillnova Digital</h2>
+        <div class="about-content">
+            <p style="text-align: center; font-size: 1.2rem; color: var(--text-dark); margin-bottom: 3rem;">
+                We are a specialized water engineering consultancy combining deep technical expertise with innovative digital solutions to address complex water challenges.
+            </p>
+
+            <div class="about-grid">
+                <div class="about-box">
+                    <h3>Our Mission</h3>
+                    <p>To advance sustainable water resource management through cutting-edge engineering analysis, numerical modeling excellence, and innovative digital technologies.</p>
+                </div>
+
+                <div class="about-box">
+                    <h3>Our Approach</h3>
+                    <p>We combine rigorous scientific methods with practical engineering experience, leveraging industry-leading modeling tools to deliver reliable, actionable solutions.</p>
+                </div>
+
+                <div class="about-box">
+                    <h3>Core Values</h3>
+                    <p>Technical excellence, innovation, integrity, and commitment to sustainable water resource management drive everything we do.</p>
+                </div>
+
+                <div class="about-box">
+                    <h3>Our Team</h3>
+                    <p>Licensed engineers and certified modelers with decades of combined experience in water resources, hydraulics, and environmental engineering.</p>
+                </div>
+
+                <div class="about-box">
+                    <h3>Technology Focus</h3>
+                    <p>We stay at the forefront of water engineering technology, utilizing advanced numerical models, GIS, and data analytics for optimal results.</p>
+                </div>
+
+                <div class="about-box">
+                    <h3>Global Standards</h3>
+                    <p>Our work adheres to international best practices and standards in water engineering, ensuring world-class quality and reliability.</p>
+                </div>
+            </div>
+        </div>
     </section>
+
+    <!-- ========== CONTACT SECTION ========== -->
+    <section id="contact" class="section-alternate">
+        <h2 class="section-title">Contact Us</h2>
+        <p class="section-subtitle">Ready to start your water engineering project? Get in touch with our expert team</p>
+        
+        <div class="contact-container">
+            <div class="contact-form">
+                <h3>Send us a message</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="project-type">Project Type *</label>
+                        <select id="project-type" name="project-type" required>
+                            <option value="">Select a service...</option>
+                            <option value="hydraulic-modeling">Hydraulic Modeling</option>
+                            <option value="flood-assessment">Flood Risk Assessment</option>
+                            <option value="coastal-engineering">Coastal Engineering</option>
+                            <option value="groundwater-study">Groundwater Study</option>
+                            <option value="training">Training Program</option>
+                            <option value="gis-analysis">GIS Analysis</option>
+                            <option value="climate-modeling">Climate Modeling</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="budget">Budget Range</label>
+                        <select id="budget" name="budget">
+                            <option value="">Select a range...</option>
+                            <option value="small">Under $10,000</option>
+                            <option value="medium">$10,000 - $50,000</option>
+                            <option value="large">$50,000 - $100,000</option>
+                            <option value="enterprise">Over $100,000</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Project Details *</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-button">Send Message</button>
+                </form>
+            </div>
+
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <div>
+                        <h4>Email</h4>
+                        <p>contact@skillnova.com</p>
+                        <p>info@skillnova.com</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <div>
+                        <h4>Phone</h4>
+                        <p>+62 21 1234 5678</p>
+                        <p>+62 812 3456 7890</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div>
+                        <h4>Location</h4>
+                        <p>Jakarta, Indonesia</p>
+                        <p>Serving clients nationwide and internationally</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">🕐</div>
+                    <div>
+                        <h4>Business Hours</h4>
+                        <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                        <p>Saturday: 9:00 AM - 1:00 PM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
     <footer>
-        <p>&copy; 2026 PT Skillnova Digital. All rights reserved.</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>PT Skillnova Digital</h3>
+                <p>Advanced Water Engineering Solutions &amp; Digital Innovation</p>
+                <p style="margin-top: 1rem;">Leading the way in sustainable water resource management through technical excellence and innovation.</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#home">Home</a>
+                <a href="#services">Services</a>
+                <a href="#expertise">Expertise</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#about">About Us</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+            <div class="footer-section">
+                <h3>Services</h3>
+                <a href="#services">Hydraulic Modeling</a>
+                <a href="#services">Groundwater Studies</a>
+                <a href="#services">Coastal Engineering</a>
+                <a href="#services">Training Programs</a>
+                <a href="#services">GIS Analysis</a>
+                <a href="#services">Climate Modeling</a>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>📧 contact@skillnova.com</p>
+                <p>📞 +62 21 1234 5678</p>
+                <p>📍 Jakarta, Indonesia</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 PT Skillnova Digital. All rights reserved. | Advanced Water Engineering Solutions &amp; Digital Innovation</p>
+        </div>
     </footer>
 </body>
 </html>

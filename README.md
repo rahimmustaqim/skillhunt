@@ -1,12 +1,22 @@
-# Skillhunt
+# PT Skillnova Digital
 
 ## About Us
-Skillhunt is a company dedicated to providing high-quality skill development services to individuals and organizations. Our mission is to empower people with the knowledge and skills they need to succeed in a rapidly changing job market.
+PT Skillnova Digital is a specialized water engineering consultancy combining deep technical expertise with innovative digital solutions to address complex water challenges. We lead in sustainable water resource management through advanced numerical modeling, innovative technology, and decades of expertise.
 
-## Services
-- **Skill Assessment**: We offer comprehensive assessments to identify skill gaps and recommend targeted training programs.
-- **Training Programs**: Our training programs cover a wide range of skills, including technical, soft skills, and industry-specific knowledge.
-- **Consulting Services**: We provide consulting services to help organizations implement effective skill development strategies.
+## Our Services
+- **Engineering Solutions for Complex Water Systems**: River basin analysis, flood risk assessment, coastal engineering, and hydraulic structure design
+- **Numerical Modeling & Simulation Training**: Professional certification in HEC-RAS, MODFLOW, DELFT3D, HEC-HMS, and CFD
+- **Digital Innovation & Data Analytics**: GIS analysis, real-time monitoring, climate modeling, and data-driven decision support
+
+## Technical Expertise
+- HEC-RAS Hydraulic Modeling
+- MODFLOW Groundwater Simulation
+- DELFT3D Coastal Dynamics
+- HEC-HMS Hydrological Modeling
+- CFD & Advanced Simulations
+- GIS & Spatial Analysis
+- Data-Driven Decision Making
+- Climate & Risk Assessment
 
 ## GitHub Pages Deployment Instructions
 To deploy your project using GitHub Pages, follow these steps:
