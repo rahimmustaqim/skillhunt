@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160">
+  <!-- Background gradient circle -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0066aa;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0088cc;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="waveGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0.6" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background rounded square -->
+  <rect width="160" height="160" rx="12" fill="url(#bgGradient)"/>
+  
+  <!-- Water waves design -->
+  <g opacity="0.3">
+    <path d="M0,60 Q40,45 80,60 T160,60 L160,160 L0,160 Z" fill="#ffffff"/>
+    <path d="M0,80 Q40,65 80,80 T160,80 L160,160 L0,160 Z" fill="#ffffff"/>
+  </g>
+  
+  <!-- Main "S" letter with water drop design -->
+  <g>
+    <!-- S letter -->
+    <path d="M90,45 Q105,45 115,55 Q125,65 120,75 Q115,85 100,90 L70,100 Q60,105 60,115 Q60,125 70,130 Q80,135 90,135 L95,135" 
+          stroke="white" stroke-width="14" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- H letter -->
+    <g>
+      <line x1="35" y1="45" x2="35" y2="135" stroke="white" stroke-width="14" stroke-linecap="round"/>
+      <line x1="55" y1="45" x2="55" y2="135" stroke="white" stroke-width="14" stroke-linecap="round"/>
+      <line x1="35" y1="90" x2="55" y2="90" stroke="white" stroke-width="14" stroke-linecap="round"/>
+    </g>
+  </g>
+  
+  <!-- Water droplet accent -->
+  <g opacity="0.8">
+    <path d="M130,120 Q130,108 137,100 Q144,108 144,120 Q144,128 137,135 Q130,128 130,120 Z" fill="white"/>
+  </g>
+</svg>
