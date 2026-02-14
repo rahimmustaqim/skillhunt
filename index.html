@@ -3,62 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PT Skillnova Digital</title>
+    <title>Skillnova Digital</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #e0f7fa;
         }
         header {
-            background-color: #0066AA;
-            color: #ffffff;
-            padding: 20px;
+            background-color: #00796b;
+            color: white;
+            padding: 1rem;
             text-align: center;
         }
-        section {
-            padding: 20px;
-            margin: 10px;
-            background: white;
-            border-radius: 5px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        nav a {
+            color: white;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+        }
+        .hero {
+            background-color: #004d40;
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+        }
+        .services, .expertise, .portfolio, .about, .contact {
+            padding: 2rem;
         }
         footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #0066AA;
+            background-color: #00796b;
             color: white;
+            text-align: center;
+            padding: 1rem;
         }
     </style>
 </head>
 <body>
     <header>
         <h1>PT Skillnova Digital</h1>
-        <img src="logo.svg" alt="Skillnova Logo" style="width: 150px; height: auto;" />
+        <nav>
+            <a href="#">Home</a>
+            <a href="#services">Services</a>
+            <a href="#expertise">Expertise</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
     </header>
-    <section id="about">
-        <h2>About Us</h2>
-        <p>We are a digital agency focused on delivering innovative solutions in water engineering.</p>
+    <section class="hero">
+        <h2>Welcome to Skillnova Digital</h2>
+        <p>Your partner in digital transformation.</p>
     </section>
-    <section id="services">
-        <h2>Our Services</h2>
-        <ul>
-            <li>Digital Branding</li>
-            <li>Web Development</li>
-            <li>Consultation in Water Engineering</li>
-        </ul>
+    <section class="services">
+        <h3>Our Services</h3>
+        <div class="services-grid">
+            <div>Service 1</div>
+            <div>Service 2</div>
+            <div>Service 3</div>
+        </div>
     </section>
-    <section id="expertise">
-        <h2>Our Expertise</h2>
-        <p>We specialize in integrating technology with water management.</p>
+    <section class="expertise">
+        <h3>Our Expertise</h3>
+        <div class="expertise-showcase">
+            <div>Expertise 1</div>
+            <div>Expertise 2</div>
+            <div>Expertise 3</div>
+        </div>
     </section>
-    <section id="portfolio">
-        <h2>Our Portfolio</h2>
-        <p>Check out our latest projects.</p>
+    <section class="portfolio">
+        <h3>Portfolio</h3>
+        <div class="portfolio-items">
+            <div>Project 1</div>
+            <div>Project 2</div>
+            <div>Project 3</div>
+        </div>
     </section>
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Email: contact@skillnova.com</p>
+    <section class="about">
+        <h3>About Us</h3>
+        <p>We are a digital agency focused on delivering top-notch solutions.</p>
+    </section>
+    <section class="contact">
+        <h3>Contact Us</h3>
+        <form>
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br>
+            <input type="submit" value="Submit">
+        </form>
     </section>
     <footer>
         <p>&copy; 2026 PT Skillnova Digital. All rights reserved.</p>
