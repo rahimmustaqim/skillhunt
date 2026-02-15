@@ -292,7 +292,6 @@ h4 {
         0 10px 30px rgba(0,0,0,0.1),
         0 5px 15px rgba(0,102,170,0.08);
     border: 1px solid rgba(0,102,170,0.1);
-    border-top: 4px solid var(--accent);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
@@ -354,6 +353,7 @@ h4 {
     margin: 14px 0;
     font-size: 14px;
     color: #4b5563;
+    list-style-type: disc;
 }
 
 .program-card ul li {
@@ -362,8 +362,11 @@ h4 {
     padding-left: 4px;
 }
 
-.program-card ul li::marker {
-    color: var(--accent);
+/* Modern browsers with ::marker support */
+@supports selector(::marker) {
+    .program-card ul li::marker {
+        color: var(--accent);
+    }
 }
 
 /* ===== Features Section ===== */
@@ -445,8 +448,9 @@ h4 {
 }
 
 .about .card {
-    border-left: 6px solid transparent;
+    border-left: 6px solid;
     border-image: var(--gradient-primary) 1;
+    border-image-slice: 1;
     background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
 }
 
