@@ -1,0 +1,651 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Board of Directors - Skillhunt Leadership Team</title>
+
+    <!-- LEADERSHIP THEME -->
+    <style>
+    :root {
+        /* Water Engineering Blue Theme */
+        --accent: #0066aa;
+        --accent-dark: #004d80;
+        --accent-light: #0088cc;
+        --muted: #5f7f8f;
+        --background: #f3f7fa;
+    }
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #1f2937;
+    line-height: 1.6;
+    background-color: #e8f2f7; /* soft ocean blue */
+}
+
+/* ===== Main Header ===== */
+.main-header {
+    background-color: #e8f2f7;
+    padding: 22px 24px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    border-bottom: none;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+    width: 100%;
+}
+
+.logo-box {
+    flex-shrink: 0;
+    width: 160px;
+    height: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+}
+
+.logo-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.header-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    flex: 1;
+}
+
+.site-title {
+    font-size: 34px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #000000;
+}
+
+.company-tagline {
+    margin-top: 8px;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--accent-dark);
+}
+
+.company-field {
+    margin-top: 4px;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    color: #333333;
+}
+
+.main-nav {
+    margin-top: 16px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.main-nav a {
+    font-size: 15px;
+    font-weight: 600;
+    color: #000;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 4px;
+}
+
+.main-nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.25s ease;
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+}
+
+.contact-btn {
+    margin-left: 16px;
+    padding: 8px 18px;
+    background: var(--accent);
+    color: #ffffff !important;
+    border-radius: 10px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-flex;
+    line-height: 1;
+    transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.contact-btn:hover {
+    background: var(--accent-dark);
+    transform: translateY(-2px);
+}
+
+
+
+/* ===== Layout container ===== */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Hero Section */
+.hero {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 48px;
+    font-weight: 900;
+    color: #000000;
+    margin-bottom: 16px;
+}
+
+.hero .subtitle {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--accent-dark);
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #374151;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    line-height: 1.8;
+}
+
+/* Board Members Section */
+.board-section {
+    padding: 60px 0;
+    background-color: #ffffff;
+}
+
+.board-section h2 {
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--accent-dark);
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.board-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.board-member {
+    background: linear-gradient(135deg, #ffffff 0%, #f9fbfd 100%);
+    border-radius: 16px;
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 4px solid var(--accent);
+}
+
+.board-member:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+}
+
+.member-photo {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 24px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent-light));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 64px;
+    box-shadow: 0 8px 20px rgba(0,102,170,0.3);
+}
+
+.member-name {
+    font-size: 26px;
+    font-weight: 800;
+    color: #000000;
+    margin-bottom: 8px;
+}
+
+.member-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 20px;
+}
+
+.member-bio {
+    font-size: 15px;
+    color: #4b5563;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.member-expertise {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.member-expertise li {
+    font-size: 14px;
+    color: #6b7280;
+    padding: 6px 0;
+    padding-left: 24px;
+    position: relative;
+    text-align: left;
+}
+
+.member-expertise li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Vision Section */
+.vision-section {
+    padding: 60px 0;
+    background-color: #e8f2f7;
+}
+
+.vision-section h2 {
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--accent-dark);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.card {
+    background: white;
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    margin-bottom: 30px;
+}
+
+.card p {
+    font-size: 17px;
+    color: #374151;
+    line-height: 1.9;
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--accent-dark);
+    margin-top: 30px;
+    margin-bottom: 16px;
+}
+
+.card ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.card ul li {
+    font-size: 16px;
+    color: #4b5563;
+    padding: 10px 0;
+    padding-left: 32px;
+    position: relative;
+    line-height: 1.7;
+}
+
+.card ul li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    margin-top: 0;
+    padding: 40px 24px;
+    text-align: center;
+    background: rgba(255,255,255,0.9);
+    border-top: 3px solid var(--accent);
+}
+
+footer p {
+    margin: 8px 0;
+    color: #374151;
+}
+
+.footer-links {
+    margin-top: 20px;
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: var(--accent-dark);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header-text {
+        align-items: center;
+    }
+
+    .main-nav {
+        justify-content: center;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero .subtitle {
+        font-size: 18px;
+    }
+
+    .board-section h2,
+    .vision-section h2 {
+        font-size: 28px;
+    }
+
+    .board-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+    </style>
+</head>
+
+<body>
+
+<!-- Header -->
+<header class="main-header">
+    <div class="header-inner">
+        <div class="logo-box">
+            <img src="images/logo.svg" alt="Skillhunt Logo">
+        </div>
+
+        <div class="header-text">
+            <h1 class="site-title">SKILLHUNT</h1>
+            <p class="company-tagline">Water Engineering Innovation & Excellence</p>
+            <p class="company-field">Board of Directors</p>
+
+            <nav class="main-nav">
+                <a href="index.html">Home</a>
+                <a href="#board">Board Members</a>
+                <a href="#vision">Vision</a>
+                <a href="#contact" class="contact-btn">Contact Us</a>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <h1>👥 Board of Directors</h1>
+        <p class="subtitle">Leadership & Vision</p>
+        <p>
+            Meet the experienced professionals guiding Skillhunt's mission to advance water engineering 
+            through innovation, expertise, and commitment to excellence. Our board brings together 
+            decades of combined experience in water resources engineering, technology development, 
+            and business leadership.
+        </p>
+    </div>
+</section>
+
+<!-- Board Members Section -->
+<section id="board" class="board-section">
+    <div class="container">
+        <h2>Our Leadership Team</h2>
+
+        <div class="board-grid">
+            <!-- Chairman -->
+            <div class="board-member">
+                <div class="member-photo">👔</div>
+                <h3 class="member-name">Dr. Ahmad Rahman</h3>
+                <p class="member-title">Chairman & Founder</p>
+                <p class="member-bio">
+                    With over 25 years of experience in water resources engineering, Dr. Rahman founded 
+                    Skillhunt with a vision to revolutionize the industry through innovative solutions 
+                    and advanced technology.
+                </p>
+                <ul class="member-expertise">
+                    <li>Water Resources Engineering</li>
+                    <li>Strategic Business Development</li>
+                    <li>International Project Leadership</li>
+                    <li>PhD in Hydraulic Engineering</li>
+                </ul>
+            </div>
+
+            <!-- CEO -->
+            <div class="board-member">
+                <div class="member-photo">💼</div>
+                <h3 class="member-name">Sarah Chen</h3>
+                <p class="member-title">Chief Executive Officer</p>
+                <p class="member-bio">
+                    Sarah brings extensive experience in technology companies and consulting firms, 
+                    driving operational excellence and sustainable growth across all Skillhunt divisions.
+                </p>
+                <ul class="member-expertise">
+                    <li>Business Strategy & Operations</li>
+                    <li>Technology Innovation</li>
+                    <li>Organizational Leadership</li>
+                    <li>MBA from Stanford University</li>
+                </ul>
+            </div>
+
+            <!-- CTO -->
+            <div class="board-member">
+                <div class="member-photo">💻</div>
+                <h3 class="member-name">Dr. James Mitchell</h3>
+                <p class="member-title">Chief Technology Officer</p>
+                <p class="member-bio">
+                    Dr. Mitchell leads our software development initiatives, specializing in advanced 
+                    numerical modeling and computational fluid dynamics for water engineering applications.
+                </p>
+                <ul class="member-expertise">
+                    <li>Software Architecture & Development</li>
+                    <li>Computational Fluid Dynamics</li>
+                    <li>Numerical Modeling Systems</li>
+                    <li>PhD in Computer Science</li>
+                </ul>
+            </div>
+
+            <!-- Director of Engineering -->
+            <div class="board-member">
+                <div class="member-photo">🌊</div>
+                <h3 class="member-name">Eng. Maria Rodriguez</h3>
+                <p class="member-title">Director of Engineering Services</p>
+                <p class="member-bio">
+                    Maria oversees all consulting projects and ensures the highest quality deliverables 
+                    for our clients worldwide, specializing in coastal and river engineering.
+                </p>
+                <ul class="member-expertise">
+                    <li>Coastal Engineering</li>
+                    <li>River Basin Management</li>
+                    <li>Project Management</li>
+                    <li>Professional Engineer (PE)</li>
+                </ul>
+            </div>
+
+            <!-- Director of Training -->
+            <div class="board-member">
+                <div class="member-photo">🎓</div>
+                <h3 class="member-name">Prof. David Thompson</h3>
+                <p class="member-title">Director of Training & Education</p>
+                <p class="member-bio">
+                    Professor Thompson brings academic excellence and practical training expertise, 
+                    developing comprehensive programs that bridge theory and real-world applications.
+                </p>
+                <ul class="member-expertise">
+                    <li>Engineering Education</li>
+                    <li>Curriculum Development</li>
+                    <li>Professional Training</li>
+                    <li>University Professor</li>
+                </ul>
+            </div>
+
+            <!-- CFO -->
+            <div class="board-member">
+                <div class="member-photo">📊</div>
+                <h3 class="member-name">Lisa Anderson</h3>
+                <p class="member-title">Chief Financial Officer</p>
+                <p class="member-bio">
+                    Lisa ensures financial stability and growth, managing investments, budgets, and 
+                    strategic financial planning to support Skillhunt's long-term vision.
+                </p>
+                <ul class="member-expertise">
+                    <li>Financial Planning & Analysis</li>
+                    <li>Investment Management</li>
+                    <li>Risk Assessment</li>
+                    <li>CPA & CFA Certifications</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Vision Section -->
+<section id="vision" class="vision-section">
+    <div class="container">
+        <h2>Our Vision & Mission</h2>
+
+        <div class="card">
+            <p>
+                The Board of Directors at Skillhunt is committed to advancing water engineering through 
+                innovation, excellence, and sustainability. We believe that solving the world's water 
+                challenges requires a combination of cutting-edge technology, deep technical expertise, 
+                and commitment to professional development.
+            </p>
+
+            <h3>Strategic Priorities</h3>
+            <ul>
+                <li><strong>Innovation Leadership:</strong> Develop next-generation tools and methodologies for water engineering</li>
+                <li><strong>Professional Excellence:</strong> Maintain the highest standards in all consulting and training services</li>
+                <li><strong>Knowledge Sharing:</strong> Build capacity through world-class training and education programs</li>
+                <li><strong>Sustainable Solutions:</strong> Promote environmentally responsible and climate-resilient approaches</li>
+                <li><strong>Global Impact:</strong> Expand our reach to serve communities and industries worldwide</li>
+                <li><strong>Collaborative Growth:</strong> Foster partnerships with research institutions, government agencies, and industry leaders</li>
+            </ul>
+
+            <h3>Our Commitment</h3>
+            <p>
+                We are dedicated to maintaining Skillhunt's position as a trusted leader in water engineering 
+                solutions. Through strategic investments in technology, talent, and partnerships, we aim to 
+                deliver exceptional value to our clients while contributing to the advancement of the 
+                water resources engineering profession globally.
+            </p>
+
+            <p>
+                Our board meets regularly to review progress, set strategic direction, and ensure that all 
+                business units—HydroConsulting, TrainingConsulting, and Software Developer—work in harmony 
+                to achieve our shared mission of water engineering innovation and excellence.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="vision-section" style="padding-top: 30px;">
+    <div class="container">
+        <h2>Get in Touch</h2>
+        <div class="card" style="text-align: center;">
+            <p>
+                <strong>Interested in learning more about Skillhunt or our services?</strong>
+            </p>
+            <p>
+                We welcome inquiries from potential clients, partners, and professionals interested in 
+                joining our team. Contact us to discuss how we can support your water engineering needs.
+            </p>
+            <p style="margin-top: 30px;">
+                <strong>Email:</strong> info@skillhunt.com<br>
+                <strong>Phone:</strong> +1 (555) 123-4567<br>
+                <strong>Address:</strong> Water Engineering Center, Innovation District
+            </p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p><strong>© <span id="year">2026</span> Skillhunt</strong></p>
+    <p style="font-size:13px;color:var(--muted);margin-top:4px;">
+        Advancing water engineering through innovation, expertise, and commitment to excellence
+    </p>
+    
+    <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="hydroconsulting.html">HydroConsulting</a>
+        <a href="trainingconsulting.html">TrainingConsulting</a>
+        <a href="softwaredeveloper.html">Software Developer</a>
+        <a href="#board">Board</a>
+    </div>
+</footer>
+
+<script>
+// Set current year
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+</script>
+
+</body>
+
+</html>
