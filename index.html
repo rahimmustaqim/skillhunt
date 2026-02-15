@@ -90,29 +90,81 @@ body {
     line-height: 1.8;
 }
 
-/* Right Corner Sidebar */
+/* Right Corner Sidebar - Simplified Icon-Only */
 .corner-sidebar {
     position: fixed;
     top: 20px;
     right: 20px;
-    width: 280px;
+    width: 60px;
     background: white;
     border-radius: 16px;
     box-shadow: 0 10px 40px rgba(0,0,0,0.15);
     z-index: 1000;
-    overflow: hidden;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
 }
 
-.sidebar-section {
-    padding: 20px;
+.sidebar-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    font-size: 28px;
+    cursor: pointer;
+    transition: all 0.3s ease;
     border-bottom: 1px solid #e5e7eb;
 }
 
-.sidebar-section:last-child {
+.sidebar-icon:last-child {
     border-bottom: none;
 }
 
-.sidebar-section h3 {
+.sidebar-icon:hover {
+    background: #f3f7fa;
+    transform: scale(1.1);
+}
+
+/* Tooltip/Popup on hover */
+.sidebar-tooltip {
+    position: absolute;
+    right: 75px;
+    top: 0;
+    min-width: 280px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(10px);
+    transition: all 0.3s ease;
+    pointer-events: none;
+    z-index: 1001;
+}
+
+.sidebar-icon:hover .sidebar-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+    pointer-events: auto;
+}
+
+.sidebar-tooltip::after {
+    content: '';
+    position: absolute;
+    right: -10px;
+    top: 20px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent white;
+}
+
+.tooltip-title {
     font-size: 16px;
     font-weight: 700;
     color: var(--primary-dark);
@@ -122,7 +174,7 @@ body {
     gap: 8px;
 }
 
-.sidebar-section p {
+.tooltip-description {
     font-size: 13px;
     color: #6b7280;
     margin: 0 0 12px 0;
@@ -192,7 +244,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 24px;
-    padding-right: 320px; /* Make room for sidebar */
+    padding-right: 100px; /* Reduced padding for smaller sidebar */
 }
 
 .holding-card {
@@ -321,16 +373,23 @@ footer p {
         padding-right: 24px; /* Remove extra padding on mobile */
     }
 
-    /* Move sidebar to bottom on mobile */
+    /* Keep sidebar at top right on mobile with icon-only view */
     .corner-sidebar {
-        position: relative;
-        top: auto;
-        right: auto;
-        width: 100%;
-        margin: 40px auto 0;
-        max-width: 500px;
-        left: 50%;
-        transform: translateX(-50%);
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        width: 50px;
+    }
+    
+    .sidebar-icon {
+        height: 50px;
+        font-size: 24px;
+    }
+    
+    /* Adjust tooltip position for mobile */
+    .sidebar-tooltip {
+        right: 65px;
+        min-width: 240px;
     }
 }
 
@@ -415,41 +474,53 @@ footer p {
         </div>
     </div>
 
-    <!-- Right Corner Sidebar -->
+    <!-- Right Corner Sidebar - Simplified Icon-Only -->
     <aside class="corner-sidebar">
-        <!-- About Section -->
-        <div class="sidebar-section">
-            <h3>ℹ️ About</h3>
-            <p>Leading provider of comprehensive water engineering solutions and innovation.</p>
-            <a href="boardofdirectors.html" class="sidebar-link">👥 Board of Directors</a>
-            <a href="#about" class="sidebar-link">📄 Company Profile</a>
+        <!-- About Icon -->
+        <div class="sidebar-icon">
+            ℹ️
+            <div class="sidebar-tooltip">
+                <h3 class="tooltip-title">About</h3>
+                <p class="tooltip-description">Leading provider of comprehensive water engineering solutions and innovation.</p>
+                <a href="boardofdirectors.html" class="sidebar-link">👥 Board of Directors</a>
+                <a href="#about" class="sidebar-link">📄 Company Profile</a>
+            </div>
         </div>
 
-        <!-- Search Tools -->
-        <div class="sidebar-section">
-            <h3>🔍 Search</h3>
-            <input type="text" class="search-box" placeholder="Search services, training..." id="searchInput">
-            <button class="search-button" onclick="performSearch()">Search</button>
+        <!-- Search Icon -->
+        <div class="sidebar-icon">
+            🔍
+            <div class="sidebar-tooltip">
+                <h3 class="tooltip-title">Search</h3>
+                <input type="text" class="search-box" placeholder="Search services, training..." id="searchInput">
+                <button class="search-button" onclick="performSearch()">Search</button>
+            </div>
         </div>
 
-        <!-- Translate Tools -->
-        <div class="sidebar-section">
-            <h3>🌐 Translate</h3>
-            <select class="translate-select" id="languageSelect" onchange="translatePage()">
-                <option value="en">English</option>
-                <option value="es">Español</option>
-                <option value="fr">Français</option>
-                <option value="de">Deutsch</option>
-                <option value="id">Bahasa Indonesia</option>
-                <option value="zh">中文</option>
-            </select>
+        <!-- Translate Icon -->
+        <div class="sidebar-icon">
+            🌐
+            <div class="sidebar-tooltip">
+                <h3 class="tooltip-title">Translate</h3>
+                <select class="translate-select" id="languageSelect" onchange="translatePage()">
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                    <option value="fr">Français</option>
+                    <option value="de">Deutsch</option>
+                    <option value="id">Bahasa Indonesia</option>
+                    <option value="zh">中文</option>
+                </select>
+            </div>
         </div>
 
-        <!-- Login/Sign Up -->
-        <div class="sidebar-section">
-            <h3>👤 Account</h3>
-            <a href="#login" class="sidebar-link">🔐 Login</a>
-            <a href="#signup" class="sidebar-link">✨ Sign Up</a>
+        <!-- Account Icon -->
+        <div class="sidebar-icon">
+            👤
+            <div class="sidebar-tooltip">
+                <h3 class="tooltip-title">Account</h3>
+                <a href="#login" class="sidebar-link">🔐 Login</a>
+                <a href="#signup" class="sidebar-link">✨ Sign Up</a>
+            </div>
         </div>
     </aside>
 </section>
