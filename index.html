@@ -489,7 +489,7 @@ function performSearch() {
 }
 
 // Allow search on Enter key
-document.getElementById('searchInput')?.addEventListener('keypress', function(e) {
+document.getElementById('searchInput')?.addEventListener('keydown', function(e) {
     if (e.key === 'Enter') {
         performSearch();
     }
