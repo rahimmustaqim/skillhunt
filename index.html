@@ -133,13 +133,6 @@ body {
     background: #f3f7fa;
 }
 
-.sidebar-icon:focus .sidebar-tooltip {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(0);
-    pointer-events: auto;
-}
-
 /* Tooltip/Popup on hover */
 .sidebar-tooltip {
     position: absolute;
@@ -159,6 +152,8 @@ body {
 }
 
 .sidebar-icon:hover .sidebar-tooltip,
+.sidebar-icon:focus .sidebar-tooltip,
+.sidebar-icon:focus-within .sidebar-tooltip,
 .sidebar-tooltip:hover {
     opacity: 1;
     visibility: visible;
