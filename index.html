@@ -114,7 +114,7 @@ body {
     height: 60px;
     font-size: 28px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: background 0.3s ease, transform 0.3s ease;
     border-bottom: 1px solid #e5e7eb;
 }
 
@@ -125,6 +125,19 @@ body {
 .sidebar-icon:hover {
     background: #f3f7fa;
     transform: scale(1.1);
+}
+
+.sidebar-icon:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: -2px;
+    background: #f3f7fa;
+}
+
+.sidebar-icon:focus .sidebar-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+    pointer-events: auto;
 }
 
 /* Tooltip/Popup on hover */
@@ -145,7 +158,8 @@ body {
     z-index: 1001;
 }
 
-.sidebar-icon:hover .sidebar-tooltip {
+.sidebar-icon:hover .sidebar-tooltip,
+.sidebar-tooltip:hover {
     opacity: 1;
     visibility: visible;
     transform: translateX(0);
@@ -477,7 +491,7 @@ footer p {
     <!-- Right Corner Sidebar - Simplified Icon-Only -->
     <aside class="corner-sidebar">
         <!-- About Icon -->
-        <div class="sidebar-icon">
+        <div class="sidebar-icon" role="button" tabindex="0" aria-label="About - Company information and profile">
             ℹ️
             <div class="sidebar-tooltip">
                 <h3 class="tooltip-title">About</h3>
@@ -488,7 +502,7 @@ footer p {
         </div>
 
         <!-- Search Icon -->
-        <div class="sidebar-icon">
+        <div class="sidebar-icon" role="button" tabindex="0" aria-label="Search - Find services and training programs">
             🔍
             <div class="sidebar-tooltip">
                 <h3 class="tooltip-title">Search</h3>
@@ -498,7 +512,7 @@ footer p {
         </div>
 
         <!-- Translate Icon -->
-        <div class="sidebar-icon">
+        <div class="sidebar-icon" role="button" tabindex="0" aria-label="Translate - Change website language">
             🌐
             <div class="sidebar-tooltip">
                 <h3 class="tooltip-title">Translate</h3>
@@ -514,7 +528,7 @@ footer p {
         </div>
 
         <!-- Account Icon -->
-        <div class="sidebar-icon">
+        <div class="sidebar-icon" role="button" tabindex="0" aria-label="Account - Login or sign up">
             👤
             <div class="sidebar-tooltip">
                 <h3 class="tooltip-title">Account</h3>
