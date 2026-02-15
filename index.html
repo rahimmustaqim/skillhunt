@@ -146,7 +146,7 @@ body {
     opacity: 0;
     visibility: hidden;
     transform: translateX(10px);
-    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    transition: opacity 0.3s ease 0.5s, visibility 0.3s ease 0.5s, transform 0.3s ease 0.5s;
     pointer-events: none;
     z-index: 1001;
 }
@@ -254,6 +254,28 @@ body {
     margin: 0 auto;
     padding: 0 24px;
     padding-right: 100px; /* Reduced padding for smaller sidebar */
+}
+
+/* Mobile swipeable holdings grid */
+@media (max-width: 768px) {
+    .holdings-grid {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        gap: 20px;
+        padding: 0 20px;
+        scrollbar-width: none; /* Firefox */
+    }
+    
+    .holdings-grid::-webkit-scrollbar {
+        display: none; /* Chrome, Safari */
+    }
+    
+    .holdings-grid .holding-card {
+        flex: 0 0 85%;
+        scroll-snap-align: center;
+    }
 }
 
 .holding-card {
@@ -374,12 +396,6 @@ footer p {
 
     .description {
         font-size: 18px;
-    }
-
-    .holdings-grid {
-        grid-template-columns: 1fr;
-        gap: 24px;
-        padding-right: 24px; /* Remove extra padding on mobile */
     }
 
     /* Keep sidebar at top right on mobile with icon-only view */
