@@ -1,0 +1,851 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrainingConsulting - Skillhunt Professional Training</title>
+
+    <!-- OCEAN/WATER THEME -->
+    <style>
+    :root {
+        /* Water Engineering Blue Theme */
+        --accent: #0066aa;
+        --accent-dark: #004d80;
+        --accent-light: #0088cc;
+        --muted: #5f7f8f;
+        --background: #f3f7fa;
+    }
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #1f2937;
+    line-height: 1.6;
+    background-color: #e8f2f7; /* soft ocean blue */
+}
+
+/* ===== Main Header ===== */
+.main-header {
+    background-color: #e8f2f7;
+    padding: 22px 24px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    border-bottom: none;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+    width: 100%;
+}
+
+.logo-box {
+    flex-shrink: 0;
+    width: 160px;
+    height: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+}
+
+.logo-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.header-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    flex: 1;
+}
+
+.site-title {
+    font-size: 34px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #000000;
+}
+
+.company-tagline {
+    margin-top: 8px;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--accent-dark);
+}
+
+.company-field {
+    margin-top: 4px;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    color: #333333;
+}
+
+.main-nav {
+    margin-top: 16px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.main-nav a {
+    font-size: 15px;
+    font-weight: 600;
+    color: #000;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 4px;
+}
+
+.main-nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.25s ease;
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+}
+
+.contact-btn {
+    margin-left: 16px;
+    padding: 8px 18px;
+    background: var(--accent);
+    color: #ffffff !important;
+    border-radius: 10px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-flex;
+    line-height: 1;
+    transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.contact-btn:hover {
+    background: var(--accent-dark);
+    transform: translateY(-2px);
+}
+
+/* ===== Layout container ===== */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.hero {
+    background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+    padding: 48px 0;
+}
+
+.card {
+    background: rgba(255,255,255,0.95);
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: 
+        0 10px 28px rgba(0,0,0,0.12),
+        0 3px 8px rgba(0,0,0,0.06);
+}
+
+section {
+    scroll-margin-top: 80px;
+}
+
+h1 {
+    font-size: 32px;
+    line-height: 1.25;
+    margin: 0 0 16px 0;
+}
+
+h2 {
+    font-size: 26px;
+    color: var(--accent-dark);
+    margin: 0 0 20px 0;
+}
+
+h3 {
+    font-size: 22px;
+    color: var(--accent-dark);
+    margin: 0 0 16px 0;
+}
+
+h4 {
+    font-size: 18px;
+    color: var(--accent-dark);
+    margin: 0 0 12px 0;
+}
+
+.subtitle {
+    color: var(--muted);
+    font-size: 14px;
+    margin-top: 12px;
+}
+
+.cta {
+    display: inline-block;
+    margin-top: 12px;
+    background-color: var(--accent);
+    color: white;
+    padding: 12px 22px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.25s ease;
+}
+
+.cta:hover {
+    background-color: var(--accent-dark);
+    transform: translateY(-2px);
+}
+
+/* ===== Training Programs Section ===== */
+.training-programs {
+    max-width: 1100px;
+    margin: 48px auto;
+    padding: 0 24px;
+}
+
+.programs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 28px;
+    margin-top: 28px;
+}
+
+.program-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow:
+        0 10px 26px rgba(0,0,0,0.12),
+        0 3px 8px rgba(0,0,0,0.06);
+    border-top: 5px solid var(--accent);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.program-card:hover {
+    transform: translateY(-6px);
+    box-shadow:
+        0 18px 40px rgba(0,0,0,0.15),
+        0 6px 14px rgba(0,0,0,0.08);
+}
+
+.program-icon {
+    font-size: 48px;
+    display: block;
+    margin-bottom: 16px;
+}
+
+.program-card h3 {
+    color: var(--accent-dark);
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.program-card p {
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: #374151;
+    margin-bottom: 16px;
+}
+
+.program-card ul {
+    padding-left: 18px;
+    margin: 12px 0;
+    font-size: 14px;
+    color: #374151;
+}
+
+.program-card ul li {
+    margin-bottom: 6px;
+}
+
+/* ===== Features Section ===== */
+.features {
+    max-width: 1100px;
+    margin: 48px auto;
+    padding: 0 24px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+    margin-top: 28px;
+}
+
+.feature-item {
+    background: white;
+    padding: 24px;
+    border-radius: 14px;
+    border-left: 6px solid var(--accent);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease;
+}
+
+.feature-item:hover {
+    transform: translateX(8px);
+}
+
+.feature-item strong {
+    font-size: 18px;
+    color: var(--accent-dark);
+    display: block;
+    margin-bottom: 8px;
+}
+
+.feature-item p {
+    font-size: 14px;
+    color: var(--muted);
+    margin: 0;
+}
+
+/* ===== About Section ===== */
+.about {
+    max-width: 1100px;
+    margin: 48px auto;
+    padding: 0 24px;
+}
+
+.about .card {
+    border-left: 6px solid var(--accent);
+}
+
+.about p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #374151;
+    margin-bottom: 14px;
+}
+
+/* ===== Contact Section ===== */
+.contact {
+    max-width: 1100px;
+    margin: 48px auto 60px;
+    padding: 0 24px;
+}
+
+.contact-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 24px;
+}
+
+.contact-form label {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+    margin-top: 6px;
+    padding: 12px 14px;
+    font-size: 14px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    font-family: inherit;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-form textarea {
+    grid-column: span 2;
+    resize: vertical;
+    min-height: 120px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px rgba(0,102,170,0.15);
+}
+
+button.cta {
+    border: none;
+    cursor: pointer;
+}
+
+.contact-submit {
+    grid-column: span 2;
+    margin-top: 10px;
+}
+
+@media (max-width: 700px) {
+    .contact-form {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form textarea,
+    .contact-submit {
+        grid-column: span 1;
+    }
+}
+
+.contact-info {
+    margin-top: 28px;
+    padding: 20px;
+    background: var(--background);
+    border-radius: 12px;
+    border-left: 4px solid var(--accent);
+}
+
+.contact-info p {
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+.contact-info strong {
+    color: var(--accent-dark);
+}
+
+/* ===== Footer ===== */
+footer {
+    margin-top: 60px;
+    padding: 32px 24px;
+    background: #d4e8f0;
+    text-align: center;
+    border-top: 3px solid var(--accent);
+}
+
+footer p {
+    margin: 8px 0;
+    color: #374151;
+}
+
+.footer-links {
+    margin-top: 16px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: var(--accent-dark);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: var(--accent);
+}
+
+/* ===== Background Effects ===== */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle at 10% 10%, rgba(255,255,255,0.35), transparent 40%),
+        radial-gradient(circle at 90% 20%, rgba(255,255,255,0.25), transparent 45%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* ===== Media Queries ===== */
+@media (max-width: 800px) {
+    .header-inner {
+        flex-direction: row;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .logo-box {
+        width: 110px;
+        height: 110px;
+    }
+
+    .site-title {
+        font-size: 22px;
+        line-height: 1.25;
+    }
+
+    .company-tagline {
+        font-size: 16px;
+    }
+
+    .company-field {
+        font-size: 13px;
+        line-height: 1.4;
+    }
+
+    .main-nav {
+        gap: 12px;
+        margin-top: 10px;
+    }
+
+    .contact-btn {
+        margin-left: 0;
+        margin-top: 12px;
+    }
+}
+    </style>
+</head>
+
+<body>
+
+<header class="main-header">
+    <div class="header-inner">
+        <div class="logo-box">
+            <img src="images/logo.svg" alt="TrainingConsulting Logo">
+        </div>
+
+        <div class="header-text">
+            <div class="site-title">TRAININGCONSULTING</div>
+            <div class="company-tagline">Professional Training Services</div>
+            <div class="company-field">
+                Master industry-standard water engineering software and become a professional
+            </div>
+
+            <nav class="main-nav">
+                <a href="index.html">← Skillhunt Home</a>
+                <a href="#home">Home</a>
+                <a href="#programs">Programs</a>
+                <a href="#features">Features</a>
+                <a href="#about">About</a>
+                <a href="#contact" class="contact-btn">Enroll Now</a>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<section id="home" class="hero">
+    <div class="container">
+        <div class="card">
+            <h1>Professional Training for Water Engineering Software</h1>
+            <p class="subtitle">
+                ✔ Hands-On Workshops &nbsp;•&nbsp; Expert Instructors &nbsp;•&nbsp; Real-World Case Studies
+            </p>
+            <p>
+                TrainingConsulting provides comprehensive training programs for students and professionals 
+                who want to master industry-standard water engineering software. Our training services are 
+                designed to build technical capacity and expertise in numerical modeling for water resources 
+                engineering.
+            </p>
+            <p>
+                Whether you're a student beginning your career, a professional looking to expand your skillset, 
+                or an organization seeking to train your team, our expert-led workshops will give you the 
+                practical knowledge and hands-on experience needed to succeed.
+            </p>
+            <a class="cta" href="#contact">Start Learning Today</a>
+        </div>
+    </div>
+</section>
+
+<section id="programs" class="training-programs">
+    <div class="container">
+        <h2>Training Programs</h2>
+        <p>
+            We offer comprehensive training programs for the most widely-used water engineering software. 
+            Each program includes hands-on exercises, real-world case studies, and expert guidance.
+        </p>
+
+        <div class="programs-grid">
+            <div class="program-card">
+                <span class="program-icon">🌊</span>
+                <h3>HEC-RAS Training</h3>
+                <p>
+                    Master hydraulic modeling for rivers, channels, and floodplains using the US Army Corps 
+                    of Engineers' HEC-RAS software.
+                </p>
+                <ul>
+                    <li>1D steady and unsteady flow modeling</li>
+                    <li>2D shallow water equations</li>
+                    <li>Floodplain analysis and mapping</li>
+                    <li>Hydraulic structure modeling</li>
+                    <li>Sediment transport analysis</li>
+                    <li>Bridge and culvert hydraulics</li>
+                </ul>
+            </div>
+
+            <div class="program-card">
+                <span class="program-icon">💧</span>
+                <h3>HEC-HMS Training</h3>
+                <p>
+                    Learn rainfall-runoff modeling and hydrological analysis using HEC-HMS for watershed 
+                    studies and flood forecasting.
+                </p>
+                <ul>
+                    <li>Watershed delineation and parameterization</li>
+                    <li>Loss models and infiltration methods</li>
+                    <li>Unit hydrograph theory and application</li>
+                    <li>Routing methods for rivers and reservoirs</li>
+                    <li>Design storm development</li>
+                    <li>Flood frequency analysis</li>
+                </ul>
+            </div>
+
+            <div class="program-card">
+                <span class="program-icon">🌊</span>
+                <h3>DELFT3D Training</h3>
+                <p>
+                    Advanced coastal and estuarine modeling for hydrodynamics, waves, sediment transport, 
+                    and water quality using Deltares' DELFT3D suite.
+                </p>
+                <ul>
+                    <li>3D hydrodynamic modeling</li>
+                    <li>Wave propagation and transformation</li>
+                    <li>Sediment transport and morphology</li>
+                    <li>Coastal structure interaction</li>
+                    <li>Salinity and water quality</li>
+                    <li>Grid generation and bathymetry</li>
+                </ul>
+            </div>
+
+            <div class="program-card">
+                <span class="program-icon">💦</span>
+                <h3>MODFLOW Training</h3>
+                <p>
+                    Comprehensive groundwater flow modeling using MODFLOW for aquifer analysis, well testing, 
+                    and water resources management.
+                </p>
+                <ul>
+                    <li>Conceptual model development</li>
+                    <li>Grid design and boundary conditions</li>
+                    <li>Steady-state and transient simulation</li>
+                    <li>Well package and pumping tests</li>
+                    <li>Calibration and parameter estimation</li>
+                    <li>Particle tracking and contaminant transport</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="features" class="features">
+    <div class="container">
+        <h2>Why Choose Our Training?</h2>
+        <p>
+            Our training programs are designed to provide you with practical, applicable skills that you can 
+            use immediately in your projects and career.
+        </p>
+
+        <div class="features-grid">
+            <div class="feature-item">
+                <strong>Expert Instructors</strong>
+                <p>Learn from experienced practitioners with years of real-world project experience</p>
+            </div>
+
+            <div class="feature-item">
+                <strong>Hands-On Learning</strong>
+                <p>Practical exercises and case studies to reinforce concepts and build confidence</p>
+            </div>
+
+            <div class="feature-item">
+                <strong>Real-World Projects</strong>
+                <p>Work with actual project data and scenarios to understand practical applications</p>
+            </div>
+
+            <div class="feature-item">
+                <strong>Small Class Sizes</strong>
+                <p>Personalized attention and support to ensure your learning success</p>
+            </div>
+
+            <div class="feature-item">
+                <strong>Flexible Formats</strong>
+                <p>On-site workshops, online training, and custom programs for organizations</p>
+            </div>
+
+            <div class="feature-item">
+                <strong>Ongoing Support</strong>
+                <p>Post-training technical support to help you apply what you've learned</p>
+            </div>
+
+            <div class="feature-item">
+                <strong>Certificate of Completion</strong>
+                <p>Professional certificate upon successful completion of training program</p>
+            </div>
+
+            <div class="feature-item">
+                <strong>Career Development</strong>
+                <p>Build skills that are in high demand across the water engineering industry</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="about">
+    <div class="container">
+        <h2>About TrainingConsulting</h2>
+        <div class="card">
+            <p>
+                <strong>TrainingConsulting</strong> is the professional training division of Skillhunt, dedicated to 
+                building technical capacity in water engineering modeling. Our mission is to transfer knowledge 
+                and expertise to the next generation of water resources professionals.
+            </p>
+            <p>
+                Our instructors are practicing water engineers with extensive experience in both consulting projects 
+                and software applications. We understand the challenges you face and design our training to address 
+                real-world needs.
+            </p>
+            <p>
+                <strong>Our Approach:</strong> We believe in learning by doing. Our training programs emphasize 
+                hands-on practice with guided exercises that progressively build your skills. We use real project 
+                data and case studies so you understand how to apply the software to solve actual engineering problems.
+            </p>
+            <p>
+                <strong>Custom Training:</strong> In addition to our standard programs, we offer custom training 
+                workshops tailored to your organization's specific needs. We can design training around your projects, 
+                data, and technical requirements.
+            </p>
+            <p>
+                Whether you're starting your career or looking to expand your technical capabilities, TrainingConsulting 
+                provides the expert instruction and practical experience you need to succeed.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="contact">
+    <div class="container">
+        <h2>Enroll in Training</h2>
+        <div class="card">
+            <p>
+                Interested in our training programs? Contact us to learn about upcoming workshops, custom 
+                training options, and how we can help develop your technical skills.
+            </p>
+
+            <form class="contact-form" action="#" method="post" onsubmit="alert('Thank you for your interest! This is a demo form. In production, this would be connected to a backend service to process your submission.'); return false;">
+                <label>
+                    Name
+                    <input type="text" name="name" required>
+                </label>
+
+                <label>
+                    Email
+                    <input type="email" name="email" required>
+                </label>
+
+                <label>
+                    Organization/University
+                    <input type="text" name="organization">
+                </label>
+
+                <label>
+                    Phone
+                    <input type="tel" name="phone">
+                </label>
+
+                <label>
+                    Training Program of Interest
+                    <select name="program">
+                        <option value="">-- Select --</option>
+                        <option value="hecras">HEC-RAS Training</option>
+                        <option value="hechms">HEC-HMS Training</option>
+                        <option value="delft3d">DELFT3D Training</option>
+                        <option value="modflow">MODFLOW Training</option>
+                        <option value="custom">Custom Training</option>
+                        <option value="multiple">Multiple Programs</option>
+                    </select>
+                </label>
+
+                <label>
+                    Training Format Preference
+                    <select name="format">
+                        <option value="">-- Select --</option>
+                        <option value="onsite">On-Site Workshop</option>
+                        <option value="online">Online Training</option>
+                        <option value="custom">Custom Corporate Training</option>
+                        <option value="flexible">Flexible/Any</option>
+                    </select>
+                </label>
+
+                <label>
+                    Message / Special Requirements
+                    <textarea name="message" required></textarea>
+                </label>
+
+                <div class="contact-submit">
+                    <button type="submit" class="cta">Submit Inquiry</button>
+                </div>
+            </form>
+
+            <div class="contact-info">
+                <p><strong>Email:</strong> training@skillhunt.com</p>
+                <p><strong>Phone:</strong> +1 (555) 123-4567</p>
+                <p><strong>Business Hours:</strong> Monday - Friday, 9:00 AM - 5:00 PM</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p><strong>© <span id="year">2026</span> TrainingConsulting - A Skillhunt Company</strong></p>
+    <p style="font-size:13px;color:var(--muted);margin-top:4px;">
+        Building technical capacity through expert training and knowledge transfer
+    </p>
+    
+    <div class="footer-links">
+        <a href="index.html">Skillhunt Home</a>
+        <a href="#programs">Programs</a>
+        <a href="#features">Features</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </div>
+</footer>
+
+<script>
+// Set current year
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// Active navigation highlight on scroll
+const sections = document.querySelectorAll("section[id]");
+const navLinks = document.querySelectorAll(".main-nav a");
+
+window.addEventListener("scroll", () => {
+    let current = "";
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120;
+        if (window.scrollY >= sectionTop) {
+            current = section.getAttribute("id");
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === "#" + current) {
+            link.classList.add("active");
+        }
+    });
+});
+</script>
+
+</body>
+
+</html>
