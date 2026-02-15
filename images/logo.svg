@@ -20,22 +20,16 @@
     <path d="M0,80 Q40,65 80,80 T160,80 L160,160 L0,160 Z" fill="#ffffff"/>
   </g>
   
-  <!-- Main "S" letter with water drop design -->
+  <!-- Main "S" letter centered with water drop design -->
   <g>
-    <!-- S letter -->
-    <path d="M90,45 Q105,45 115,55 Q125,65 120,75 Q115,85 100,90 L70,100 Q60,105 60,115 Q60,125 70,130 Q80,135 90,135 L95,135" 
-          stroke="white" stroke-width="14" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-    
-    <!-- H letter -->
-    <g>
-      <line x1="35" y1="45" x2="35" y2="135" stroke="white" stroke-width="14" stroke-linecap="round"/>
-      <line x1="55" y1="45" x2="55" y2="135" stroke="white" stroke-width="14" stroke-linecap="round"/>
-      <line x1="35" y1="90" x2="55" y2="90" stroke="white" stroke-width="14" stroke-linecap="round"/>
-    </g>
+    <!-- S letter - centered and larger -->
+    <path d="M95,35 Q115,35 125,50 Q135,65 128,80 Q120,95 100,102 L65,115 Q52,122 52,138 Q52,152 65,160 Q78,168 95,168 L105,168" 
+          stroke="white" stroke-width="18" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
   </g>
   
-  <!-- Water droplet accent -->
-  <g opacity="0.8">
-    <path d="M130,120 Q130,108 137,100 Q144,108 144,120 Q144,128 137,135 Q130,128 130,120 Z" fill="white"/>
+  <!-- Water droplet accents -->
+  <g opacity="0.75">
+    <path d="M35,45 Q35,35 40,28 Q45,35 45,45 Q45,52 40,57 Q35,52 35,45 Z" fill="white"/>
+    <path d="M125,130 Q125,120 130,113 Q135,120 135,130 Q135,137 130,142 Q125,137 125,130 Z" fill="white"/>
   </g>
 </svg>
