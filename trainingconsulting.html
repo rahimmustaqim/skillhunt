@@ -9,12 +9,12 @@
     <!-- OCEAN/WATER THEME -->
     <style>
     :root {
-        /* Water Engineering Blue Theme */
-        --accent: #0066aa;
-        --accent-dark: #004d80;
-        --accent-light: #0088cc;
-        --muted: #5f7f8f;
-        --background: #f3f7fa;
+        /* Education/Training Green Theme - Different from blue water theme */
+        --accent: #059669;
+        --accent-dark: #047857;
+        --accent-light: #10b981;
+        --muted: #6b7280;
+        --background: #f0fdf4;
     }
 
 body {
@@ -22,17 +22,17 @@ body {
     font-family: 'Segoe UI', Arial, sans-serif;
     color: #1f2937;
     line-height: 1.6;
-    background-color: #e8f2f7; /* soft ocean blue */
+    background-color: #ecfdf5; /* soft green tint */
 }
 
 /* ===== Main Header ===== */
 .main-header {
-    background-color: #e8f2f7;
+    background-color: #ecfdf5;
     padding: 22px 24px;
     display: flex;
     justify-content: center;
     position: relative;
-    border-bottom: none;
+    border-bottom: 3px solid var(--accent-light);
 }
 
 .header-inner {
@@ -148,7 +148,7 @@ body {
 
 .hero {
     background: linear-gradient(135deg, var(--accent), var(--accent-dark));
-    padding: 48px 0;
+    padding: 60px 0;
 }
 
 .card {
@@ -227,20 +227,21 @@ h4 {
 
 .program-card {
     background: #ffffff;
-    border-radius: 16px;
-    padding: 28px;
+    border-radius: 20px;
+    padding: 32px;
     box-shadow:
-        0 10px 26px rgba(0,0,0,0.12),
-        0 3px 8px rgba(0,0,0,0.06);
-    border-top: 5px solid var(--accent);
+        0 10px 26px rgba(5,150,105,0.15),
+        0 3px 8px rgba(5,150,105,0.08);
+    border-top: 6px solid var(--accent);
+    border-left: 3px solid var(--accent-light);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .program-card:hover {
-    transform: translateY(-6px);
+    transform: translateY(-8px);
     box-shadow:
-        0 18px 40px rgba(0,0,0,0.15),
-        0 6px 14px rgba(0,0,0,0.08);
+        0 20px 50px rgba(5,150,105,0.2),
+        0 8px 16px rgba(5,150,105,0.12);
 }
 
 .program-icon {
@@ -271,64 +272,6 @@ h4 {
 
 .program-card ul li {
     margin-bottom: 6px;
-}
-
-/* ===== Features Section ===== */
-.features {
-    max-width: 1100px;
-    margin: 48px auto;
-    padding: 0 24px;
-}
-
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 24px;
-    margin-top: 28px;
-}
-
-.feature-item {
-    background: white;
-    padding: 24px;
-    border-radius: 14px;
-    border-left: 6px solid var(--accent);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-    transition: transform 0.2s ease;
-}
-
-.feature-item:hover {
-    transform: translateX(8px);
-}
-
-.feature-item strong {
-    font-size: 18px;
-    color: var(--accent-dark);
-    display: block;
-    margin-bottom: 8px;
-}
-
-.feature-item p {
-    font-size: 14px;
-    color: var(--muted);
-    margin: 0;
-}
-
-/* ===== About Section ===== */
-.about {
-    max-width: 1100px;
-    margin: 48px auto;
-    padding: 0 24px;
-}
-
-.about .card {
-    border-left: 6px solid var(--accent);
-}
-
-.about p {
-    font-size: 15px;
-    line-height: 1.8;
-    color: #374151;
-    margin-bottom: 14px;
 }
 
 /* ===== Contact Section ===== */
@@ -421,9 +364,9 @@ button.cta {
 footer {
     margin-top: 60px;
     padding: 32px 24px;
-    background: #d4e8f0;
+    background: #d1fae5;
     text-align: center;
-    border-top: 3px solid var(--accent);
+    border-top: 4px solid var(--accent);
 }
 
 footer p {
@@ -457,8 +400,9 @@ body::before {
     position: fixed;
     inset: 0;
     background:
-        radial-gradient(circle at 10% 10%, rgba(255,255,255,0.35), transparent 40%),
-        radial-gradient(circle at 90% 20%, rgba(255,255,255,0.25), transparent 45%);
+        radial-gradient(circle at 15% 15%, rgba(16,185,129,0.15), transparent 40%),
+        radial-gradient(circle at 85% 25%, rgba(5,150,105,0.12), transparent 45%),
+        radial-gradient(circle at 50% 80%, rgba(16,185,129,0.08), transparent 50%);
     pointer-events: none;
     z-index: -1;
 }
@@ -521,7 +465,8 @@ body::before {
             <nav class="main-nav">
                 <a href="index.html">← Skillhunt Home</a>
                 <a href="#home">Home</a>
-                <a href="#programs">Program</a>
+                <a href="#programs">Programs</a>
+                <a href="#contact" class="contact-btn">Contact Us</a>
             </nav>
         </div>
     </div>
@@ -652,93 +597,9 @@ body::before {
     </div>
 </section>
 
-<section id="features" class="features">
-    <div class="container">
-        <h2>Why Choose Our Training?</h2>
-        <p>
-            Our training programs are designed to provide you with practical, applicable skills that you can 
-            use immediately in your projects and career.
-        </p>
-
-        <div class="features-grid">
-            <div class="feature-item">
-                <strong>Expert Instructors</strong>
-                <p>Learn from experienced practitioners with years of real-world project experience</p>
-            </div>
-
-            <div class="feature-item">
-                <strong>Hands-On Learning</strong>
-                <p>Practical exercises and case studies to reinforce concepts and build confidence</p>
-            </div>
-
-            <div class="feature-item">
-                <strong>Real-World Projects</strong>
-                <p>Work with actual project data and scenarios to understand practical applications</p>
-            </div>
-
-            <div class="feature-item">
-                <strong>Small Class Sizes</strong>
-                <p>Personalized attention and support to ensure your learning success</p>
-            </div>
-
-            <div class="feature-item">
-                <strong>Flexible Formats</strong>
-                <p>On-site workshops, online training, and custom programs for organizations</p>
-            </div>
-
-            <div class="feature-item">
-                <strong>Ongoing Support</strong>
-                <p>Post-training technical support to help you apply what you've learned</p>
-            </div>
-
-            <div class="feature-item">
-                <strong>Certificate of Completion</strong>
-                <p>Professional certificate upon successful completion of training program</p>
-            </div>
-
-            <div class="feature-item">
-                <strong>Career Development</strong>
-                <p>Build skills that are in high demand across the water engineering industry</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="about" class="about">
-    <div class="container">
-        <h2>About TrainingConsulting</h2>
-        <div class="card">
-            <p>
-                <strong>TrainingConsulting</strong> is the professional training division of Skillhunt, dedicated to 
-                building technical capacity in water engineering modeling. Our mission is to transfer knowledge 
-                and expertise to the next generation of water resources professionals.
-            </p>
-            <p>
-                Our instructors are practicing water engineers with extensive experience in both consulting projects 
-                and software applications. We understand the challenges you face and design our training to address 
-                real-world needs.
-            </p>
-            <p>
-                <strong>Our Approach:</strong> We believe in learning by doing. Our training programs emphasize 
-                hands-on practice with guided exercises that progressively build your skills. We use real project 
-                data and case studies so you understand how to apply the software to solve actual engineering problems.
-            </p>
-            <p>
-                <strong>Custom Training:</strong> In addition to our standard programs, we offer custom training 
-                workshops tailored to your organization's specific needs. We can design training around your projects, 
-                data, and technical requirements.
-            </p>
-            <p>
-                Whether you're starting your career or looking to expand your technical capabilities, TrainingConsulting 
-                provides the expert instruction and practical experience you need to succeed.
-            </p>
-        </div>
-    </div>
-</section>
-
 <section id="contact" class="contact">
     <div class="container">
-        <h2>Enroll in Training</h2>
+        <h2>Contact Us</h2>
         <div class="card">
             <p>
                 Interested in our training programs? Contact us to learn about upcoming workshops, custom 
@@ -818,8 +679,6 @@ body::before {
     <div class="footer-links">
         <a href="index.html">Skillhunt Home</a>
         <a href="#programs">Programs</a>
-        <a href="#features">Features</a>
-        <a href="#about">About</a>
         <a href="#contact">Contact</a>
     </div>
 </footer>
