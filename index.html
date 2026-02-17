@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skillhunt - Water Engineering Innovation & Excellence</title>
+    <link rel="stylesheet" href="css/responsive.css">
 
     <style>
     :root {
@@ -54,8 +55,9 @@ body {
 }
 
 .logo-container img {
-    width: 200px;
-    height: 200px;
+    width: min(200px, 60vw);
+    height: auto;
+    max-height: 200px;
     object-fit: contain;
     filter: drop-shadow(0 10px 30px rgba(0,0,0,0.1));
 }
@@ -68,23 +70,23 @@ body {
 }
 
 .company-name {
-    font-size: 72px;
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
     font-weight: 900;
-    letter-spacing: 4px;
+    letter-spacing: clamp(1px, 0.5vw, 4px);
     color: #000000;
     margin: 0 0 24px 0;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
 }
 
 .tagline {
-    font-size: 32px;
+    font-size: clamp(1.25rem, 4vw, 2rem);
     font-weight: 700;
     color: var(--primary-dark);
     margin: 0 0 20px 0;
 }
 
 .description {
-    font-size: 20px;
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
     color: #374151;
     margin: 0 0 50px 0;
     line-height: 1.8;
@@ -248,34 +250,12 @@ body {
 /* Holdings Grid */
 .holdings-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 32px;
+    grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+    gap: clamp(20px, 3vw, 32px);
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 24px;
-    padding-right: 100px; /* Reduced padding for smaller sidebar */
-}
-
-/* Mobile swipeable holdings grid */
-@media (max-width: 768px) {
-    .holdings-grid {
-        display: flex;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
-        gap: 20px;
-        padding: 0 20px;
-        scrollbar-width: none; /* Firefox */
-    }
-    
-    .holdings-grid::-webkit-scrollbar {
-        display: none; /* Chrome, Safari */
-    }
-    
-    .holdings-grid .holding-card {
-        flex: 0 0 85%;
-        scroll-snap-align: center;
-    }
+    padding: 0 clamp(20px, 3vw, 24px);
+    padding-right: clamp(20px, 8vw, 100px); /* Account for sidebar */
 }
 
 .holding-card {
@@ -384,40 +364,96 @@ footer p {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 599px) {
+    .hero-section {
+        min-height: auto;
+        padding: 30px 15px;
+    }
+
     .company-name {
-        font-size: 48px;
-        letter-spacing: 2px;
+        font-size: 2rem;
+        letter-spacing: 1px;
     }
 
     .tagline {
-        font-size: 24px;
+        font-size: 1.25rem;
     }
 
     .description {
-        font-size: 18px;
+        font-size: 1rem;
+    }
+    
+    .logo-container img {
+        width: min(150px, 50vw);
     }
 
+    /* Mobile swipeable holdings grid */
+    .holdings-grid {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        gap: 20px;
+        padding: 0 15px;
+        padding-right: 15px;
+        scrollbar-width: none; /* Firefox */
+    }
+    
+    .holdings-grid::-webkit-scrollbar {
+        display: none; /* Chrome, Safari */
+    }
+    
+    .holdings-grid .holding-card {
+        flex: 0 0 85%;
+        scroll-snap-align: center;
+    }
+    
     /* Keep sidebar at top right on mobile with icon-only view */
     .corner-sidebar {
         position: fixed;
         top: 10px;
         right: 10px;
-        width: 50px;
+        width: 45px;
     }
     
     .sidebar-icon {
-        height: 50px;
-        font-size: 24px;
+        height: 45px;
+        font-size: 20px;
     }
     
     /* Adjust tooltip position for mobile */
     .sidebar-tooltip {
-        right: 65px;
-        min-width: 240px;
+        right: 55px;
+        min-width: 200px;
+        max-width: calc(100vw - 70px);
     }
 }
 
+/* Tablet adjustments */
+@media (min-width: 600px) and (max-width: 899px) {
+    .holdings-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        padding-right: clamp(24px, 5vw, 60px);
+    }
+    
+    .corner-sidebar {
+        width: 55px;
+    }
+    
+    .sidebar-icon {
+        height: 55px;
+        font-size: 24px;
+    }
+}
+
+/* Desktop small */
+@media (min-width: 900px) and (max-width: 1199px) {
+    .holdings-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+/* Desktop large */
 @media (min-width: 1200px) {
     .holdings-grid {
         grid-template-columns: repeat(3, 1fr);
