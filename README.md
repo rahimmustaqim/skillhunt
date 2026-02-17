@@ -1,12 +1,19 @@
 # Skillhunt
 
 ## About Us
-Skillhunt is a company dedicated to providing high-quality skill development services to individuals and organizations. Our mission is to empower people with the knowledge and skills they need to succeed in a rapidly changing job market.
+Skillhunt is an international job opportunities platform dedicated to connecting Indonesian professionals with career opportunities around the world. Our mission is to bridge the gap between talented Indonesian workers and global employers, facilitating meaningful international career connections.
+
+## Our Focus
+We specialize in connecting Indonesian talent with opportunities in:
+- **Japan**: Technology, Engineering, Healthcare, Hospitality, and Manufacturing
+- **Australia**: Mining, Agriculture, Education, Healthcare, and Business
+- **Europe**: Technology, Engineering, Healthcare, Hospitality, and Creative Industries
 
 ## Services
-- **Skill Assessment**: We offer comprehensive assessments to identify skill gaps and recommend targeted training programs.
-- **Training Programs**: Our training programs cover a wide range of skills, including technical, soft skills, and industry-specific knowledge.
-- **Consulting Services**: We provide consulting services to help organizations implement effective skill development strategies.
+- **Job Matching**: We connect qualified Indonesian professionals with international employers seeking talent.
+- **Career Counseling**: Guidance on international job applications, visa requirements, and cultural preparation.
+- **Employer Services**: Help international companies find and recruit skilled Indonesian professionals.
+- **Language & Skills Training**: Prepare candidates for success in their international careers.
 
 ## GitHub Pages Deployment Instructions
 To deploy your project using GitHub Pages, follow these steps:
