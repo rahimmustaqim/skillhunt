@@ -53,8 +53,7 @@ body {
 .logo-box {
     flex-shrink: 0;
     width: min(140px, 30vw);
-    height: auto;
-    aspect-ratio: 1;
+    height: min(140px, 30vw); /* Fallback for browsers without aspect-ratio support */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -62,6 +61,13 @@ body {
     background: white;
     padding: 12px;
     box-shadow: 0 4px 20px rgba(0,102,170,0.12);
+}
+
+@supports (aspect-ratio: 1) {
+    .logo-box {
+        height: auto;
+        aspect-ratio: 1;
+    }
 }
 
 .logo-box img {
