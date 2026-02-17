@@ -571,10 +571,12 @@ function performSearch() {
         return;
     }
     
-    // Simple search implementation - redirect to Japan opportunities page
+    // Simple search implementation - all job searches redirect to Japan opportunities page
+    // Note: This platform exclusively focuses on Indonesia-Japan job connections
     if (query.includes('japan') || query.includes('jepang') || query.includes('tokyo') || 
         query.includes('tech') || query.includes('engineering') || query.includes('hospitality') ||
-        query.includes('healthcare') || query.includes('nursing') || query.includes('manufacturing')) {
+        query.includes('healthcare') || query.includes('nursing') || query.includes('manufacturing') ||
+        query.includes('job') || query.includes('work') || query.includes('career')) {
         window.location.href = 'hydroconsulting.html';
     } else if (query.includes('team') || query.includes('about') || query.includes('contact')) {
         window.location.href = 'boardofdirectors.html';
