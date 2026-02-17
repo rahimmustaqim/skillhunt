@@ -12,7 +12,7 @@ We specialize in connecting Indonesian talent with opportunities in Japan across
 - **Manufacturing & Construction**: Factory operations, quality control, construction management
 
 ## Services
-- **Job Matching**: We connect qualified Indonesian professionals with international employers seeking talent.
+- **Job Matching**: We connect qualified Indonesian professionals with Japanese employers seeking talent.
 - **Career Counseling**: Guidance on international job applications, visa requirements, and cultural preparation.
 - **Employer Services**: Help international companies find and recruit skilled Indonesian professionals.
 - **Language & Skills Training**: Prepare candidates for success in their international careers.
