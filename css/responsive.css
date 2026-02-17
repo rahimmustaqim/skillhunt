@@ -1,16 +1,308 @@
+/* ========================================
+   SKILLHUNT RESPONSIVE DESIGN FRAMEWORK
+   Mobile-First Approach with Standard Breakpoints
+   ======================================== */
+
+/* Base Container - Mobile First */
 .container {
     width: 100%;
-    padding: 0 15px;
+    max-width: 100%;
+    padding: 0 clamp(10px, 3vw, 24px);
+    margin: 0 auto;
 }
 
-@media (max-width: 768px) {
-    .container {
-        padding: 0 10px;
+/* ========================================
+   TYPOGRAPHY - RESPONSIVE FONT SIZES
+   ======================================== */
+
+/* Fluid Typography for better scaling */
+h1, .company-name, .site-title, .page-title {
+    font-size: clamp(2rem, 6vw, 4.5rem) !important;
+    line-height: 1.2 !important;
+}
+
+h2, .tagline, .company-tagline, .section-title {
+    font-size: clamp(1.25rem, 4vw, 2rem) !important;
+    line-height: 1.3 !important;
+}
+
+h3, .subsection-title {
+    font-size: clamp(1.1rem, 3vw, 1.5rem) !important;
+}
+
+p, .description, .body-text {
+    font-size: clamp(0.9rem, 2vw, 1.125rem) !important;
+    line-height: 1.6 !important;
+}
+
+/* ========================================
+   RESPONSIVE IMAGES & MEDIA
+   ======================================== */
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.logo-container img,
+.logo-box img {
+    width: 100%;
+    height: auto;
+    max-width: 200px;
+}
+
+/* ========================================
+   LAYOUT - RESPONSIVE GRIDS & FLEXBOX
+   ======================================== */
+
+/* Grid Systems */
+.holdings-grid,
+.services-grid,
+.programs-grid {
+    display: grid;
+    gap: clamp(16px, 3vw, 32px);
+    grid-template-columns: 1fr;
+    padding: 0 clamp(10px, 3vw, 24px);
+}
+
+/* Card/Box Layouts */
+.holding-card,
+.service-box,
+.program-card {
+    padding: clamp(20px, 4vw, 40px) !important;
+}
+
+/* ========================================
+   MOBILE BREAKPOINT: 0-599px
+   ======================================== */
+
+@media (max-width: 599px) {
+    /* Typography adjustments */
+    .company-name, .site-title {
+        letter-spacing: 1px !important;
+    }
+    
+    /* Spacing */
+    section {
+        padding: 20px 10px !important;
+    }
+    
+    /* Hero sections */
+    .hero-section {
+        min-height: auto !important;
+        padding: 30px 15px !important;
+    }
+    
+    /* Headers */
+    .main-header {
+        padding: 20px 15px !important;
+    }
+    
+    .header-inner {
+        flex-direction: column;
+        gap: 16px !important;
+        text-align: center;
+    }
+    
+    .logo-box {
+        width: 100px !important;
+        height: 100px !important;
+    }
+    
+    /* Cards - full width stacking */
+    .holdings-grid,
+    .services-grid,
+    .programs-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 0 15px;
+    }
+    
+    /* Sidebar adjustments */
+    .corner-sidebar {
+        width: 45px !important;
+        top: 10px !important;
+        right: 10px !important;
+    }
+    
+    .sidebar-icon {
+        height: 45px !important;
+        font-size: 20px !important;
+    }
+    
+    .sidebar-tooltip {
+        right: 55px !important;
+        min-width: 200px !important;
+        max-width: calc(100vw - 70px) !important;
+    }
+    
+    /* Buttons */
+    .cta-button, .button {
+        width: 100%;
+        padding: 12px 20px !important;
+        font-size: 14px !important;
+    }
+    
+    /* Footer */
+    footer {
+        padding: 30px 15px !important;
     }
 }
 
-@media (max-width: 480px) {
+/* ========================================
+   TABLET BREAKPOINT: 600-899px
+   ======================================== */
+
+@media (min-width: 600px) and (max-width: 899px) {
     .container {
-        padding: 0 5px;
+        padding: 0 20px;
+    }
+    
+    /* Grid - 2 columns for tablets */
+    .holdings-grid,
+    .services-grid,
+    .programs-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 24px;
+    }
+    
+    .logo-box {
+        width: 120px !important;
+        height: 120px !important;
+    }
+    
+    .header-inner {
+        gap: 24px;
+    }
+    
+    .corner-sidebar {
+        width: 55px !important;
+    }
+    
+    .sidebar-icon {
+        height: 55px !important;
+        font-size: 24px !important;
+    }
+}
+
+/* ========================================
+   DESKTOP SMALL: 900-1199px
+   ======================================== */
+
+@media (min-width: 900px) and (max-width: 1199px) {
+    .container {
+        max-width: 1100px;
+        padding: 0 24px;
+    }
+    
+    /* Grid - 2-3 columns */
+    .holdings-grid,
+    .services-grid,
+    .programs-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 28px;
+    }
+}
+
+/* ========================================
+   DESKTOP LARGE: 1200px+
+   ======================================== */
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1200px;
+    }
+    
+    /* Grid - 3 columns for large screens */
+    .holdings-grid,
+    .services-grid,
+    .programs-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+    }
+}
+
+/* ========================================
+   ULTRA WIDE: 1600px+
+   ======================================== */
+
+@media (min-width: 1600px) {
+    .container {
+        max-width: 1400px;
+    }
+}
+
+/* ========================================
+   RESPONSIVE UTILITIES
+   ======================================== */
+
+/* Hide on mobile */
+@media (max-width: 599px) {
+    .hide-mobile {
+        display: none !important;
+    }
+}
+
+/* Hide on tablet */
+@media (min-width: 600px) and (max-width: 899px) {
+    .hide-tablet {
+        display: none !important;
+    }
+}
+
+/* Hide on desktop */
+@media (min-width: 900px) {
+    .hide-desktop {
+        display: none !important;
+    }
+}
+
+/* Show only on mobile */
+.show-mobile {
+    display: none !important;
+}
+
+@media (max-width: 599px) {
+    .show-mobile {
+        display: block !important;
+    }
+}
+
+/* ========================================
+   ACCESSIBILITY & TOUCH TARGETS
+   ======================================== */
+
+@media (max-width: 899px) {
+    /* Ensure touch targets are at least 44x44px */
+    button,
+    a,
+    input,
+    select,
+    .sidebar-icon {
+        min-height: 44px;
+        min-width: 44px;
+    }
+}
+
+/* ========================================
+   PRINT STYLES
+   ======================================== */
+
+@media print {
+    .corner-sidebar,
+    .sidebar-icon,
+    .no-print {
+        display: none !important;
+    }
+    
+    body {
+        background: white !important;
+    }
+    
+    .holding-card,
+    .service-box {
+        box-shadow: none !important;
+        border: 1px solid #ddd;
     }
 }

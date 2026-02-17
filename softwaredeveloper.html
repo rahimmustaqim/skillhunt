@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Software Developer - Skillhunt Innovative Solutions</title>
+    <link rel="stylesheet" href="css/responsive.css">
 
     <style>
     :root {
@@ -51,8 +52,8 @@ body {
 
 .logo-box {
     flex-shrink: 0;
-    width: 140px;
-    height: 140px;
+    width: min(140px, 30vw);
+    height: min(140px, 30vw); /* Fallback for browsers without aspect-ratio support */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -60,6 +61,13 @@ body {
     background: white;
     padding: 12px;
     box-shadow: 0 4px 20px rgba(0,102,170,0.12);
+}
+
+@supports (aspect-ratio: 1) {
+    .logo-box {
+        height: auto;
+        aspect-ratio: 1;
+    }
 }
 
 .logo-box img {
@@ -77,23 +85,23 @@ body {
 }
 
 .site-title {
-    font-size: 38px;
+    font-size: clamp(1.5rem, 4vw, 2.375rem);
     font-weight: 900;
-    letter-spacing: 3px;
+    letter-spacing: clamp(1px, 0.3vw, 3px);
     color: #000000;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
 }
 
 .company-tagline {
     margin-top: 10px;
-    font-size: 22px;
+    font-size: clamp(1rem, 2.5vw, 1.375rem);
     font-weight: 700;
     color: var(--primary-dark);
 }
 
 .company-field {
     margin-top: 6px;
-    font-size: 17px;
+    font-size: clamp(0.875rem, 2vw, 1.0625rem);
     letter-spacing: 0.3px;
     color: #555555;
     line-height: 1.5;
@@ -107,7 +115,7 @@ body {
 }
 
 .main-nav a {
-    font-size: 15px;
+    font-size: clamp(0.875rem, 1.8vw, 0.9375rem);
     font-weight: 600;
     color: #000;
     text-decoration: none;
@@ -154,7 +162,7 @@ body {
 .container {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 40px;
+    padding: 0 clamp(1.25rem, 4vw, 2.5rem);
 }
 
 .hero {
@@ -196,21 +204,21 @@ section {
 }
 
 h1 {
-    font-size: 42px;
+    font-size: clamp(2rem, 5vw, 2.625rem);
     line-height: 1.25;
     margin: 0 0 20px 0;
     font-weight: 900;
 }
 
 h2 {
-    font-size: 32px;
+    font-size: clamp(1.625rem, 4vw, 2rem);
     color: var(--primary-dark);
     margin: 0 0 24px 0;
     font-weight: 900;
 }
 
 h3 {
-    font-size: 24px;
+    font-size: clamp(1.25rem, 3vw, 1.5rem);
     color: var(--primary-dark);
     margin: 0 0 18px 0;
     font-weight: 700;
@@ -218,7 +226,7 @@ h3 {
 
 .subtitle {
     color: var(--muted);
-    font-size: 16px;
+    font-size: clamp(0.9375rem, 2vw, 1rem);
     margin-top: 14px;
     font-weight: 500;
 }
@@ -232,7 +240,7 @@ h3 {
     border-radius: 12px;
     text-decoration: none;
     font-weight: 700;
-    font-size: 15px;
+    font-size: clamp(0.875rem, 1.8vw, 0.9375rem);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 4px 15px rgba(0,102,170,0.3);
     position: relative;
@@ -264,7 +272,7 @@ h3 {
 .products {
     max-width: 1400px;
     margin: 60px auto;
-    padding: 0 40px;
+    padding: 0 clamp(1.25rem, 4vw, 2.5rem);
 }
 
 .products h2 {
@@ -275,14 +283,14 @@ h3 {
     text-align: center;
     max-width: 900px;
     margin: 0 auto 36px;
-    font-size: 17px;
+    font-size: clamp(0.9375rem, 2vw, 1.0625rem);
     color: #4b5563;
     line-height: 1.7;
 }
 
 .products-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
     gap: 40px;
     margin-top: 36px;
 }
@@ -326,20 +334,20 @@ h3 {
 }
 
 .product-icon {
-    font-size: 72px;
+    font-size: clamp(2rem, 6vw, 4.5rem);
     margin-bottom: 20px;
     display: block;
 }
 
 .product-header h3 {
     color: white;
-    font-size: 36px;
+    font-size: clamp(1.625rem, 4vw, 2.25rem);
     margin: 0 0 14px 0;
     font-weight: 900;
 }
 
 .product-tagline {
-    font-size: 19px;
+    font-size: clamp(1rem, 2.2vw, 1.1875rem);
     opacity: 0.95;
     margin: 0;
     font-weight: 500;
@@ -350,14 +358,14 @@ h3 {
 }
 
 .product-body p {
-    font-size: 16px;
+    font-size: clamp(0.9375rem, 2vw, 1rem);
     line-height: 1.8;
     color: #374151;
     margin-bottom: 20px;
 }
 
 .product-body h4 {
-    font-size: 20px;
+    font-size: clamp(1.125rem, 2.5vw, 1.25rem);
     color: var(--primary-dark);
     margin: 28px 0 14px 0;
     font-weight: 800;
@@ -369,7 +377,7 @@ h3 {
 }
 
 .product-body ul li {
-    font-size: 15px;
+    font-size: clamp(0.875rem, 1.8vw, 0.9375rem);
     color: #374151;
     margin-bottom: 10px;
     line-height: 1.7;
@@ -388,7 +396,7 @@ h3 {
     background: linear-gradient(135deg, var(--tech-purple), #9333ea);
     color: white;
     border-radius: 24px;
-    font-size: 14px;
+    font-size: clamp(0.8125rem, 1.8vw, 0.875rem);
     font-weight: 700;
     margin-bottom: 20px;
     box-shadow: 0 4px 15px rgba(107,70,193,0.3);
@@ -398,7 +406,7 @@ h3 {
 .features {
     max-width: 1400px;
     margin: 60px auto;
-    padding: 0 40px;
+    padding: 0 clamp(1.25rem, 4vw, 2.5rem);
 }
 
 .features h2 {
@@ -409,14 +417,14 @@ h3 {
     text-align: center;
     max-width: 900px;
     margin: 0 auto 36px;
-    font-size: 17px;
+    font-size: clamp(0.9375rem, 2vw, 1.0625rem);
     color: #4b5563;
     line-height: 1.7;
 }
 
 .features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
     gap: 28px;
     margin-top: 36px;
 }
@@ -459,7 +467,7 @@ h3 {
 }
 
 .feature-item strong {
-    font-size: 20px;
+    font-size: clamp(1.125rem, 2.5vw, 1.25rem);
     color: var(--primary-dark);
     display: block;
     margin-bottom: 12px;
@@ -467,7 +475,7 @@ h3 {
 }
 
 .feature-item p {
-    font-size: 15px;
+    font-size: clamp(0.875rem, 1.8vw, 0.9375rem);
     color: var(--muted);
     margin: 0;
     line-height: 1.6;
@@ -477,7 +485,7 @@ h3 {
 .about {
     max-width: 1400px;
     margin: 60px auto;
-    padding: 0 40px;
+    padding: 0 clamp(1.25rem, 4vw, 2.5rem);
 }
 
 .about .card {
@@ -488,7 +496,7 @@ h3 {
 }
 
 .about p {
-    font-size: 16px;
+    font-size: clamp(0.9375rem, 2vw, 1rem);
     line-height: 1.8;
     color: #374151;
     margin-bottom: 16px;
@@ -498,7 +506,7 @@ h3 {
 .contact {
     max-width: 1400px;
     margin: 60px auto 80px;
-    padding: 0 40px;
+    padding: 0 clamp(1.25rem, 4vw, 2.5rem);
 }
 
 .contact-form {
@@ -511,7 +519,7 @@ h3 {
 .contact-form label {
     display: flex;
     flex-direction: column;
-    font-size: 15px;
+    font-size: clamp(0.875rem, 1.8vw, 0.9375rem);
     font-weight: 600;
     color: #1f2937;
 }
@@ -521,7 +529,7 @@ h3 {
 .contact-form select {
     margin-top: 8px;
     padding: 16px 18px;
-    font-size: 15px;
+    font-size: clamp(0.875rem, 1.8vw, 0.9375rem);
     border-radius: 12px;
     border: 2px solid #e5e7eb;
     font-family: inherit;
@@ -554,7 +562,7 @@ button.cta {
     margin-top: 12px;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 599px) {
     .contact-form {
         grid-template-columns: 1fr;
     }
@@ -576,7 +584,7 @@ button.cta {
 
 .contact-info p {
     margin: 10px 0;
-    font-size: 15px;
+    font-size: clamp(0.875rem, 1.8vw, 0.9375rem);
 }
 
 .contact-info strong {
@@ -596,7 +604,7 @@ footer {
 footer p {
     margin: 10px 0;
     color: #374151;
-    font-size: 15px;
+    font-size: clamp(0.875rem, 1.8vw, 0.9375rem);
 }
 
 .footer-links {
@@ -611,7 +619,7 @@ footer p {
     color: var(--primary-dark);
     text-decoration: none;
     font-weight: 700;
-    font-size: 15px;
+    font-size: clamp(0.875rem, 1.8vw, 0.9375rem);
     transition: color 0.2s ease;
 }
 
@@ -632,59 +640,16 @@ body::before {
 }
 
 /* ===== Media Queries ===== */
-@media (max-width: 900px) {
-    .products-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 800px) {
+@media (max-width: 599px) {
     .header-inner {
         flex-direction: row;
         align-items: center;
         gap: 20px;
-        padding: 0 20px;
-    }
-
-    .logo-box {
-        width: 100px;
-        height: 100px;
-        padding: 8px;
-    }
-
-    .site-title {
-        font-size: 24px;
-        line-height: 1.25;
-        letter-spacing: 1px;
-    }
-
-    .company-tagline {
-        font-size: 18px;
-    }
-
-    .company-field {
-        font-size: 14px;
-        line-height: 1.4;
-    }
-
-    .main-nav {
-        gap: 14px;
-        margin-top: 12px;
-    }
-    
-    .main-nav a {
-        font-size: 14px;
-    }
-
-    .contact-btn {
-        margin-left: 0;
-        margin-top: 14px;
-        padding: 9px 18px;
-        font-size: 14px;
+        padding: 0 clamp(1rem, 3vw, 1.25rem);
     }
     
     .container {
-        padding: 0 20px;
+        padding: 0 clamp(1rem, 3vw, 1.25rem);
     }
     
     .hero {
@@ -692,28 +657,19 @@ body::before {
     }
     
     .card {
-        padding: 28px;
+        padding: clamp(1.5rem, 5vw, 2rem);
         border-radius: 20px;
-    }
-    
-    h1 {
-        font-size: 32px;
-    }
-    
-    h2 {
-        font-size: 26px;
     }
     
     .products,
     .features,
     .about,
     .contact {
-        padding: 0 20px;
+        padding: 0 clamp(1rem, 3vw, 1.25rem);
         margin: 40px auto;
     }
     
     .products-grid {
-        grid-template-columns: 1fr;
         gap: 28px;
     }
     
@@ -730,7 +686,6 @@ body::before {
     }
     
     .features-grid {
-        grid-template-columns: 1fr;
         gap: 20px;
     }
     
@@ -739,7 +694,13 @@ body::before {
     }
 }
 
-@media (min-width: 801px) and (max-width: 1200px) {
+@media (min-width: 600px) and (max-width: 899px) {
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 900px) and (max-width: 1199px) {
     .features-grid {
         grid-template-columns: repeat(2, 1fr);
     }

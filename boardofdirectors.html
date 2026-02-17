@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Board of Directors - Skillhunt Leadership Team</title>
+    <link rel="stylesheet" href="css/responsive.css">
 
     <!-- LEADERSHIP THEME -->
     <style>
@@ -28,7 +29,7 @@ body {
 /* ===== Main Header ===== */
 .main-header {
     background-color: #e8f2f7;
-    padding: 22px 24px;
+    padding: clamp(16px, 3vw, 22px) clamp(16px, 3vw, 24px);
     display: flex;
     justify-content: center;
     position: relative;
@@ -38,17 +39,17 @@ body {
 .header-inner {
     display: flex;
     align-items: center;
-    gap: 24px;
+    gap: clamp(16px, 3vw, 24px);
     max-width: 1100px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 clamp(16px, 3vw, 24px);
     width: 100%;
 }
 
 .logo-box {
     flex-shrink: 0;
-    width: 160px;
-    height: 160px;
+    width: min(160px, 30vw);
+    height: min(160px, 30vw);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -70,7 +71,7 @@ body {
 }
 
 .site-title {
-    font-size: 34px;
+    font-size: clamp(24px, 5vw, 34px);
     font-weight: 800;
     letter-spacing: 2px;
     color: #000000;
@@ -78,14 +79,14 @@ body {
 
 .company-tagline {
     margin-top: 8px;
-    font-size: 20px;
+    font-size: clamp(16px, 3vw, 20px);
     font-weight: 700;
     color: var(--accent-dark);
 }
 
 .company-field {
     margin-top: 4px;
-    font-size: 16px;
+    font-size: clamp(14px, 2.5vw, 16px);
     letter-spacing: 0.5px;
     color: #333333;
 }
@@ -93,12 +94,12 @@ body {
 .main-nav {
     margin-top: 16px;
     display: flex;
-    gap: 20px;
+    gap: clamp(12px, 2.5vw, 20px);
     flex-wrap: wrap;
 }
 
 .main-nav a {
-    font-size: 15px;
+    font-size: clamp(13px, 2vw, 15px);
     font-weight: 600;
     color: #000;
     text-decoration: none;
@@ -145,31 +146,31 @@ body {
 .container {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 clamp(16px, 3vw, 24px);
 }
 
 /* Hero Section */
 .hero {
-    padding: 60px 0;
+    padding: clamp(40px, 8vw, 60px) 0;
     text-align: center;
 }
 
 .hero h1 {
-    font-size: 48px;
+    font-size: clamp(32px, 6vw, 48px);
     font-weight: 900;
     color: #000000;
     margin-bottom: 16px;
 }
 
 .hero .subtitle {
-    font-size: 22px;
+    font-size: clamp(18px, 3vw, 22px);
     font-weight: 700;
     color: var(--accent-dark);
     margin-bottom: 20px;
 }
 
 .hero p {
-    font-size: 18px;
+    font-size: clamp(16px, 2.5vw, 18px);
     color: #374151;
     max-width: 800px;
     margin: 0 auto 40px;
@@ -178,29 +179,29 @@ body {
 
 /* Board Members Section */
 .board-section {
-    padding: 60px 0;
+    padding: clamp(40px, 8vw, 60px) 0;
     background-color: #ffffff;
 }
 
 .board-section h2 {
-    font-size: 36px;
+    font-size: clamp(28px, 5vw, 36px);
     font-weight: 800;
     color: var(--accent-dark);
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: clamp(30px, 6vw, 50px);
 }
 
 .board-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 40px;
-    margin-bottom: 60px;
+    grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+    gap: clamp(24px, 4vw, 40px);
+    margin-bottom: clamp(40px, 8vw, 60px);
 }
 
 .board-member {
     background: linear-gradient(135deg, #ffffff 0%, #f9fbfd 100%);
     border-radius: 16px;
-    padding: 40px 30px;
+    padding: clamp(24px, 5vw, 40px) clamp(20px, 4vw, 30px);
     text-align: center;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -213,34 +214,34 @@ body {
 }
 
 .member-photo {
-    width: 150px;
-    height: 150px;
+    width: min(150px, 40vw);
+    height: min(150px, 40vw);
     margin: 0 auto 24px;
     border-radius: 50%;
     background: linear-gradient(135deg, var(--accent), var(--accent-light));
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 64px;
+    font-size: clamp(48px, 10vw, 64px);
     box-shadow: 0 8px 20px rgba(0,102,170,0.3);
 }
 
 .member-name {
-    font-size: 26px;
+    font-size: clamp(20px, 4vw, 26px);
     font-weight: 800;
     color: #000000;
     margin-bottom: 8px;
 }
 
 .member-title {
-    font-size: 18px;
+    font-size: clamp(16px, 2.5vw, 18px);
     font-weight: 700;
     color: var(--accent);
     margin-bottom: 20px;
 }
 
 .member-bio {
-    font-size: 15px;
+    font-size: clamp(14px, 2vw, 15px);
     color: #4b5563;
     line-height: 1.7;
     margin-bottom: 20px;
@@ -253,7 +254,7 @@ body {
 }
 
 .member-expertise li {
-    font-size: 14px;
+    font-size: clamp(13px, 2vw, 14px);
     color: #6b7280;
     padding: 6px 0;
     padding-left: 24px;
@@ -267,43 +268,43 @@ body {
     left: 0;
     color: var(--accent);
     font-weight: bold;
-    font-size: 16px;
+    font-size: clamp(14px, 2vw, 16px);
 }
 
 /* Vision Section */
 .vision-section {
-    padding: 60px 0;
+    padding: clamp(40px, 8vw, 60px) 0;
     background-color: #e8f2f7;
 }
 
 .vision-section h2 {
-    font-size: 36px;
+    font-size: clamp(28px, 5vw, 36px);
     font-weight: 800;
     color: var(--accent-dark);
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: clamp(20px, 4vw, 30px);
 }
 
 .card {
     background: white;
     border-radius: 16px;
-    padding: 40px;
+    padding: clamp(24px, 5vw, 40px);
     box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-    margin-bottom: 30px;
+    margin-bottom: clamp(20px, 4vw, 30px);
 }
 
 .card p {
-    font-size: 17px;
+    font-size: clamp(15px, 2.5vw, 17px);
     color: #374151;
     line-height: 1.9;
     margin-bottom: 20px;
 }
 
 .card h3 {
-    font-size: 24px;
+    font-size: clamp(20px, 3.5vw, 24px);
     font-weight: 700;
     color: var(--accent-dark);
-    margin-top: 30px;
+    margin-top: clamp(20px, 4vw, 30px);
     margin-bottom: 16px;
 }
 
@@ -314,7 +315,7 @@ body {
 }
 
 .card ul li {
-    font-size: 16px;
+    font-size: clamp(14px, 2.5vw, 16px);
     color: #4b5563;
     padding: 10px 0;
     padding-left: 32px;
@@ -327,14 +328,14 @@ body {
     position: absolute;
     left: 0;
     color: var(--accent);
-    font-size: 20px;
+    font-size: clamp(18px, 3vw, 20px);
     font-weight: bold;
 }
 
 /* Footer */
 footer {
     margin-top: 0;
-    padding: 40px 24px;
+    padding: clamp(24px, 5vw, 40px) clamp(16px, 3vw, 24px);
     text-align: center;
     background: rgba(255,255,255,0.9);
     border-top: 3px solid var(--accent);
@@ -348,13 +349,13 @@ footer p {
 .footer-links {
     margin-top: 20px;
     display: flex;
-    gap: 24px;
+    gap: clamp(16px, 3vw, 24px);
     justify-content: center;
     flex-wrap: wrap;
 }
 
 .footer-links a {
-    font-size: 14px;
+    font-size: clamp(13px, 2vw, 14px);
     font-weight: 600;
     color: var(--accent);
     text-decoration: none;
@@ -366,7 +367,7 @@ footer p {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 599px) {
     .header-inner {
         flex-direction: column;
         text-align: center;
@@ -379,23 +380,32 @@ footer p {
     .main-nav {
         justify-content: center;
     }
+}
 
-    .hero h1 {
-        font-size: 36px;
+@media (min-width: 600px) and (max-width: 899px) {
+    .header-inner {
+        flex-direction: column;
+        text-align: center;
     }
 
-    .hero .subtitle {
-        font-size: 18px;
+    .header-text {
+        align-items: center;
     }
 
-    .board-section h2,
-    .vision-section h2 {
-        font-size: 28px;
+    .main-nav {
+        justify-content: center;
     }
+}
 
-    .board-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
+@media (min-width: 900px) and (max-width: 1199px) {
+    .container {
+        max-width: 900px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1100px;
     }
 }
     </style>
