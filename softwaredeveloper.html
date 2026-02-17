@@ -645,11 +645,11 @@ body::before {
         flex-direction: row;
         align-items: center;
         gap: 20px;
-        padding: 0 20px;
+        padding: 0 clamp(1rem, 3vw, 1.25rem);
     }
     
     .container {
-        padding: 0 20px;
+        padding: 0 clamp(1rem, 3vw, 1.25rem);
     }
     
     .hero {
@@ -657,7 +657,7 @@ body::before {
     }
     
     .card {
-        padding: 28px;
+        padding: clamp(1.5rem, 5vw, 2rem);
         border-radius: 20px;
     }
     
@@ -665,7 +665,7 @@ body::before {
     .features,
     .about,
     .contact {
-        padding: 0 20px;
+        padding: 0 clamp(1rem, 3vw, 1.25rem);
         margin: 40px auto;
     }
     
