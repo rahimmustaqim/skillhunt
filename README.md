@@ -1,19 +1,21 @@
 # Skillhunt
 
 ## About Us
-Skillhunt is an international job opportunities platform dedicated to connecting Indonesian professionals with career opportunities around the world. Our mission is to bridge the gap between talented Indonesian workers and global employers, facilitating meaningful international career connections.
+Skillhunt is a specialized job opportunities platform dedicated to connecting Indonesian professionals with career opportunities in Japan. Our mission is to bridge the gap between talented Indonesian workers and Japanese employers, facilitating meaningful career connections between Indonesia and the Land of the Rising Sun.
 
 ## Our Focus
-We specialize in connecting Indonesian talent with opportunities in:
-- **Japan**: Technology, Engineering, Healthcare, Hospitality, and Manufacturing
-- **Australia**: Mining, Agriculture, Education, Healthcare, and Business
-- **Europe**: Technology, Engineering, Healthcare, Hospitality, and Creative Industries
+We specialize in connecting Indonesian talent with opportunities in Japan across:
+- **Technology & IT**: Software development, data science, cybersecurity, and IT infrastructure
+- **Engineering**: Civil, mechanical, electrical, and industrial engineering positions
+- **Healthcare**: Nursing, medical technology, elderly care, and healthcare administration
+- **Hospitality & Tourism**: Hotels, restaurants, tourism services, and customer service
+- **Manufacturing & Construction**: Factory operations, quality control, construction management
 
 ## Services
-- **Job Matching**: We connect qualified Indonesian professionals with international employers seeking talent.
-- **Career Counseling**: Guidance on international job applications, visa requirements, and cultural preparation.
-- **Employer Services**: Help international companies find and recruit skilled Indonesian professionals.
-- **Language & Skills Training**: Prepare candidates for success in their international careers.
+- **Job Matching**: We connect qualified Indonesian professionals with Japanese employers seeking talent.
+- **Career Counseling**: Guidance on Japanese job applications, visa requirements, and cultural preparation.
+- **Employer Services**: Help Japanese companies find and recruit skilled Indonesian professionals.
+- **Language & Skills Training**: Prepare candidates for success in their Japanese careers.
 
 ## GitHub Pages Deployment Instructions
 To deploy your project using GitHub Pages, follow these steps:

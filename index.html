@@ -471,10 +471,10 @@ footer p {
 
     <div class="hero-content">
         <h1 class="company-name">SKILLHUNT</h1>
-        <p class="tagline">Connect to Global Job Opportunities</p>
+        <p class="tagline">Connect to Career Opportunities in Japan</p>
         <p class="description">
-            Your trusted platform for international career connections between Indonesia and the world. 
-            We bridge talented professionals with opportunities across Japan, Australia, Europe, and beyond.
+            Your trusted platform for career connections between Indonesia and Japan. 
+            We bridge talented Indonesian professionals with exciting opportunities in the Land of the Rising Sun.
         </p>
     </div>
 
@@ -496,42 +496,6 @@ footer p {
                 <li>Manufacturing & Construction</li>
             </ul>
             <a href="hydroconsulting.html" class="cta-button">Explore Opportunities</a>
-        </div>
-
-        <!-- Indonesia-Australia Job Connections -->
-        <div class="holding-card">
-            <span class="holding-icon">🇮🇩🤝🇦🇺</span>
-            <h2>Indonesia - Australia</h2>
-            <p>
-                Discover career paths in Australia's dynamic job market. We connect Indonesian 
-                professionals with opportunities in mining, agriculture, education, healthcare, and more.
-            </p>
-            <ul>
-                <li>Mining & Resources</li>
-                <li>Agriculture & Farming</li>
-                <li>Education & Research</li>
-                <li>Healthcare Services</li>
-                <li>Business & Finance</li>
-            </ul>
-            <a href="trainingconsulting.html" class="cta-button">View Opportunities</a>
-        </div>
-
-        <!-- Indonesia-Europe Job Connections -->
-        <div class="holding-card">
-            <span class="holding-icon">🇮🇩🤝🇪🇺</span>
-            <h2>Indonesia - Europe</h2>
-            <p>
-                Unlock European career opportunities across multiple countries. From tech hubs in Germany 
-                to hospitality in France, and engineering in the Netherlands - find your perfect match.
-            </p>
-            <ul>
-                <li>Technology & Startups (Germany, UK)</li>
-                <li>Engineering & Research (Netherlands)</li>
-                <li>Hospitality & Culinary (France, Italy)</li>
-                <li>Healthcare (Nordic Countries)</li>
-                <li>Creative Industries (Spain, UK)</li>
-            </ul>
-            <a href="softwaredeveloper.html" class="cta-button">Discover Opportunities</a>
         </div>
     </div>
 
@@ -590,7 +554,7 @@ footer p {
 <footer>
     <p><strong>© <span id="year">2026</span> Skillhunt</strong></p>
     <p style="font-size:13px;color:var(--muted);margin-top:4px;">
-        Connecting Indonesian talent with global opportunities - Your bridge to international careers
+        Connecting Indonesian talent with opportunities in Japan - Your bridge to Japanese careers
     </p>
 </footer>
 
@@ -607,17 +571,17 @@ function performSearch() {
         return;
     }
     
-    // Simple search implementation - redirect to relevant pages based on keywords
-    if (query.includes('japan') || query.includes('jepang') || query.includes('tokyo')) {
+    // Simple search implementation - all job searches redirect to Japan opportunities page
+    // Note: This platform exclusively focuses on Indonesia-Japan job connections
+    if (query.includes('japan') || query.includes('jepang') || query.includes('tokyo') || 
+        query.includes('tech') || query.includes('engineering') || query.includes('hospitality') ||
+        query.includes('healthcare') || query.includes('nursing') || query.includes('manufacturing') ||
+        query.includes('job') || query.includes('work') || query.includes('career')) {
         window.location.href = 'hydroconsulting.html';
-    } else if (query.includes('australia') || query.includes('aussie') || query.includes('sydney')) {
-        window.location.href = 'trainingconsulting.html';
-    } else if (query.includes('europe') || query.includes('eropa') || query.includes('germany') || query.includes('france') || query.includes('uk')) {
-        window.location.href = 'softwaredeveloper.html';
     } else if (query.includes('team') || query.includes('about') || query.includes('contact')) {
         window.location.href = 'boardofdirectors.html';
     } else {
-        alert('No results found for "' + query + '". Try: Japan, Australia, Europe, or about us');
+        alert('No results found for "' + query + '". Try: Japan, technology, engineering, or about us');
     }
 }
 
